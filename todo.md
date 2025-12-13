@@ -76,3 +76,31 @@
 - [x] Implement smooth scroll animations
 - [x] Add interactive hover effects
 - [ ] Include social proof and testimonials section (future enhancement)
+
+## OAuth Login Page Branding
+- [ ] Update VITE_APP_TITLE to "Taptico AI"
+- [ ] Update VITE_APP_LOGO with Taptico logo URL
+
+## Bow and Arrow Icon Versions
+- [x] Create black version of bow and arrow icon
+- [x] Create white version of bow and arrow icon
+- [x] Create multiple sizes (16x16, 32x32, 64x64, 128x128, 256x256, 512x512)
+- [x] Export as PNG files
+
+## Tutorial Video Creation
+- [ ] Plan video storyboard with 5-6 key scenes
+- [ ] Generate reference images for character and setting consistency
+- [ ] Generate video clips for each scene
+- [ ] Combine clips with transitions
+- [ ] Add text overlays and branding
+- [ ] Export final tutorial video
+
+## Pricing Page Development
+- [x] Research competitive pricing for AI marketing strategy tools
+- [x] Define three subscription tiers with feature breakdowns
+- [x] Design pricing comparison table layout
+- [x] Create pricing page component
+- [x] Implement dynamic pricing calculator
+- [x] Add FAQ section for pricing questions
+- [x] Integrate with subscription tier system
+- [x] Add CTA buttons linking to signup/onboarding

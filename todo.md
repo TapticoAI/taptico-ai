@@ -145,3 +145,7 @@
 - [x] Update landing page to use white logo on dark background
 - [x] Update pricing page to match landing page black aesthetic
 - [x] Ensure consistent branding across all pages
+
+## Pricing Page Text Readability
+- [x] Update package level buttons to be readable (white text)
+- [x] Ensure all body text is white for visibility on dark background

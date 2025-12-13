@@ -177,7 +177,7 @@ export default function Pricing() {
                   )}
                   <CardHeader>
                     <CardTitle className="text-2xl text-blue-500">{tier.name}</CardTitle>
-                    <CardDescription className="text-sm">{tier.description}</CardDescription>
+                    <CardDescription className="text-sm text-white">{tier.description}</CardDescription>
                     <div className="mt-4">
                       <span className="text-4xl font-bold text-blue-500">
                         ${billingCycle === "monthly" ? tier.monthlyPrice : Math.round(tier.annualPrice / 12)}
@@ -200,7 +200,7 @@ export default function Pricing() {
                           ) : (
                             <X className="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" />
                           )}
-                          <span className={feature.included ? "text-gray-200" : "text-gray-500"}>
+                          <span className={feature.included ? "text-white" : "text-gray-500"}>
                             {feature.text}
                           </span>
                         </li>
@@ -211,7 +211,7 @@ export default function Pricing() {
                     {tier.name === "Enterprise" ? (
                       <a href={tier.href} className="w-full">
                         <Button
-                          className="w-full"
+                          className={`w-full ${!tier.popular ? "text-white hover:bg-white/10" : ""}`}
                           variant={tier.popular ? "default" : "outline"}
                           size="lg"
                         >
@@ -222,7 +222,7 @@ export default function Pricing() {
                     ) : (
                       <a href={tier.href} className="w-full">
                         <Button
-                          className="w-full"
+                          className={`w-full ${!tier.popular ? "text-white hover:bg-white/10" : ""}`}
                           variant={tier.popular ? "default" : "outline"}
                           size="lg"
                         >

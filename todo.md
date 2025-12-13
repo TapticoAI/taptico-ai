@@ -139,3 +139,9 @@
 - [x] Add social proof section
 - [x] Optimize for mobile responsiveness
 - [x] Prepare for Taptico.AI domain connection
+
+## Logo and Pricing Page Updates
+- [x] Copy white Taptico logo to public directory
+- [x] Update landing page to use white logo on dark background
+- [x] Update pricing page to match landing page black aesthetic
+- [x] Ensure consistent branding across all pages

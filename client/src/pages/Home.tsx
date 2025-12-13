@@ -27,7 +27,7 @@ export default function Home() {
         <nav className="border-b border-white/10 backdrop-blur-sm bg-black/50 sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <img src="/taptico-logo.png" alt="Taptico AI" className="h-10" />
+              <img src="/taptico-logo-white.png" alt="Taptico AI" className="h-10" />
             </div>
             <div className="flex items-center gap-6">
               <Link href="/pricing">
@@ -299,7 +299,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-2">
-                <img src="/taptico-logo.png" alt="Taptico" className="h-8" />
+                <img src="/taptico-logo-white.png" alt="Taptico" className="h-8" />
               </div>
               <div className="text-sm text-gray-500">
                 © 2025 Taptico Solutions, LLC. All rights reserved.

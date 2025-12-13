@@ -78,21 +78,21 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen flex flex-col bg-black text-white">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-white/10 backdrop-blur-sm bg-black/50 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/">
             <a className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src="/taptico-logo.png" alt="Taptico" className="h-8" />
+              <img src="/taptico-logo-white.png" alt="Taptico" className="h-8" />
             </a>
           </Link>
           <nav className="flex items-center gap-4">
             <Link href="/">
-              <a className="text-sm font-medium hover:text-blue-600 transition-colors">Home</a>
+              <a className="text-sm font-medium hover:text-blue-400 transition-colors">Home</a>
             </Link>
             <Link href="/pricing">
-              <a className="text-sm font-medium text-blue-600">Pricing</a>
+              <a className="text-sm font-medium text-blue-400">Pricing</a>
             </Link>
             {isAuthenticated ? (
               <Link href="/">
@@ -111,13 +111,13 @@ export default function Pricing() {
         {/* Hero Section */}
         <section className="py-20">
           <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
               Simple, Transparent Pricing
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-400 mb-8">
               Get CMO-level strategic thinking for a fraction of the cost. One successful strategy pays for itself.
             </p>
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-6 py-3 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-6 py-3 rounded-full text-sm font-medium">
               <Sparkles className="w-4 h-4" />
               Replace $250K/year CMO salary or $25K consultant projects
             </div>
@@ -128,13 +128,13 @@ export default function Pricing() {
         <section className="pb-8">
           <div className="container mx-auto px-4">
             <div className="flex justify-center">
-              <div className="inline-flex items-center gap-3 bg-gray-100 p-1 rounded-lg">
+              <div className="inline-flex items-center gap-3 bg-gray-900 border border-white/10 p-1 rounded-lg">
                 <button
                   onClick={() => setBillingCycle("monthly")}
                   className={`px-6 py-2 rounded-md font-medium transition-all ${
                     billingCycle === "monthly"
-                      ? "bg-white text-blue-600 shadow-sm"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "bg-blue-600 text-white shadow-sm"
+                      : "text-gray-400 hover:text-white"
                   }`}
                 >
                   Monthly
@@ -143,8 +143,8 @@ export default function Pricing() {
                   onClick={() => setBillingCycle("annual")}
                   className={`px-6 py-2 rounded-md font-medium transition-all flex items-center gap-2 ${
                     billingCycle === "annual"
-                      ? "bg-white text-blue-600 shadow-sm"
-                      : "text-gray-600 hover:text-gray-900"
+                      ? "bg-blue-600 text-white shadow-sm"
+                      : "text-gray-400 hover:text-white"
                   }`}
                 >
                   Annual
@@ -166,12 +166,12 @@ export default function Pricing() {
                   key={tier.name}
                   className={`relative flex flex-col ${
                     tier.popular
-                      ? "border-blue-500 border-2 shadow-xl scale-105"
-                      : "border-gray-200"
+                      ? "border-blue-500 border-2 shadow-xl shadow-blue-500/20 scale-105 bg-gray-900"
+                      : "border-white/10 bg-gray-900"
                   }`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                       Most Popular
                     </div>
                   )}
@@ -182,9 +182,9 @@ export default function Pricing() {
                       <span className="text-4xl font-bold">
                         ${billingCycle === "monthly" ? tier.monthlyPrice : Math.round(tier.annualPrice / 12)}
                       </span>
-                      <span className="text-gray-600">/month</span>
+                      <span className="text-gray-400">/month</span>
                     </div>
-                    <p className="text-sm text-gray-500 mt-2">
+                    <p className="text-sm text-gray-400 mt-2">
                       {billingCycle === "monthly" 
                         ? "Billed monthly • Cancel anytime"
                         : `Billed annually at $${tier.annualPrice}/year • Save $${Math.round(tier.monthlyPrice * 12 - tier.annualPrice)}`
@@ -200,7 +200,7 @@ export default function Pricing() {
                           ) : (
                             <X className="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" />
                           )}
-                          <span className={feature.included ? "text-gray-700" : "text-gray-400"}>
+                          <span className={feature.included ? "text-gray-200" : "text-gray-500"}>
                             {feature.text}
                           </span>
                         </li>
@@ -246,9 +246,9 @@ export default function Pricing() {
         </section>
 
         {/* Pay-Per-Strategy Option */}
-        <section className="py-12 bg-gray-50">
+        <section className="py-12 bg-gray-950">
           <div className="container mx-auto px-4 max-w-4xl">
-            <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-blue-50">
+            <Card className="border-2 border-blue-500/30 bg-gradient-to-br from-blue-500/5 to-gray-900">
               <CardHeader>
                 <CardTitle className="text-2xl">Pay-Per-Strategy</CardTitle>
                 <CardDescription>No subscription needed • Perfect for occasional use</CardDescription>
@@ -256,8 +256,8 @@ export default function Pricing() {
               <CardContent>
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
-                    <div className="text-4xl font-bold text-purple-600 mb-2">$49</div>
-                    <p className="text-gray-600">per strategy generation</p>
+                    <div className="text-4xl font-bold text-blue-400 mb-2">$49</div>
+                    <p className="text-gray-400">per strategy generation</p>
                     <ul className="mt-4 space-y-2">
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
@@ -279,7 +279,7 @@ export default function Pricing() {
                   </div>
                   <div>
                     <a href={isAuthenticated ? "/new-project" : getLoginUrl()}>
-                      <Button size="lg" variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
+                      <Button size="lg" variant="outline" className="border-blue-500 text-blue-400 hover:bg-blue-500/10">
                         Buy Single Strategy
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
@@ -292,177 +292,177 @@ export default function Pricing() {
         </section>
 
         {/* Feature Comparison Table */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-black">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-4">Compare Plans in Detail</h2>
-              <p className="text-center text-gray-600 mb-12">See exactly what's included in each tier</p>
+              <p className="text-center text-gray-400 mb-12">See exactly what's included in each tier</p>
               
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse">
                   <thead>
-                    <tr className="border-b-2 border-gray-300">
-                      <th className="text-left py-4 px-4 font-semibold text-gray-700 w-1/3">Feature</th>
-                      <th className="text-center py-4 px-4 font-semibold text-gray-700 w-1/6">
+                    <tr className="border-b-2 border-white/10">
+                      <th className="text-left py-4 px-4 font-semibold text-gray-200 w-1/3">Feature</th>
+                      <th className="text-center py-4 px-4 font-semibold text-gray-200 w-1/6">
                         <div className="text-lg">Starter</div>
-                        <div className="text-2xl font-bold text-blue-600 mt-1">$79</div>
-                        <div className="text-xs text-gray-500">per month</div>
+                        <div className="text-2xl font-bold text-blue-400 mt-1">$79</div>
+                        <div className="text-xs text-gray-400">per month</div>
                       </th>
-                      <th className="text-center py-4 px-4 font-semibold text-gray-700 w-1/6 bg-blue-50 relative">
+                      <th className="text-center py-4 px-4 font-semibold text-gray-200 w-1/6 bg-blue-500/10 relative">
                         <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                           Most Popular
                         </div>
                         <div className="text-lg mt-2">Professional</div>
-                        <div className="text-2xl font-bold text-blue-600 mt-1">$199</div>
-                        <div className="text-xs text-gray-500">per month</div>
+                        <div className="text-2xl font-bold text-blue-400 mt-1">$199</div>
+                        <div className="text-xs text-gray-400">per month</div>
                       </th>
-                      <th className="text-center py-4 px-4 font-semibold text-gray-700 w-1/6">
+                      <th className="text-center py-4 px-4 font-semibold text-gray-200 w-1/6">
                         <div className="text-lg">Enterprise</div>
-                        <div className="text-2xl font-bold text-blue-600 mt-1">$499</div>
-                        <div className="text-xs text-gray-500">per month</div>
+                        <div className="text-2xl font-bold text-blue-400 mt-1">$499</div>
+                        <div className="text-xs text-gray-400">per month</div>
                       </th>
                     </tr>
                   </thead>
                   <tbody>
                     {/* Core Features */}
-                    <tr className="bg-gray-50">
-                      <td colSpan={4} className="py-3 px-4 font-semibold text-sm text-gray-700 uppercase tracking-wide">
+                    <tr className="bg-gray-900">
+                      <td colSpan={4} className="py-3 px-4 font-semibold text-sm text-gray-300 uppercase tracking-wide">
                         Core Features
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Strategy projects per month</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Strategy projects per month</td>
                       <td className="py-4 px-4 text-center font-medium">2</td>
-                      <td className="py-4 px-4 text-center font-medium bg-blue-50">10</td>
+                      <td className="py-4 px-4 text-center font-medium bg-blue-500/10">10</td>
                       <td className="py-4 px-4 text-center font-medium">Unlimited</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">All 7 strategic modules</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">All 7 strategic modules</td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Strategy regenerations</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Strategy regenerations</td>
                       <td className="py-4 px-4 text-center font-medium">3 per project</td>
-                      <td className="py-4 px-4 text-center font-medium bg-blue-50">Unlimited</td>
+                      <td className="py-4 px-4 text-center font-medium bg-blue-500/10">Unlimited</td>
                       <td className="py-4 px-4 text-center font-medium">Unlimited</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">"Go Deeper" AI explanations</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">"Go Deeper" AI explanations</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Strategy history retention</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Strategy history retention</td>
                       <td className="py-4 px-4 text-center font-medium">30 days</td>
-                      <td className="py-4 px-4 text-center font-medium bg-blue-50">1 year</td>
+                      <td className="py-4 px-4 text-center font-medium bg-blue-500/10">1 year</td>
                       <td className="py-4 px-4 text-center font-medium">Unlimited</td>
                     </tr>
 
                     {/* Export & Sharing */}
-                    <tr className="bg-gray-50">
-                      <td colSpan={4} className="py-3 px-4 font-semibold text-sm text-gray-700 uppercase tracking-wide">
+                    <tr className="bg-gray-900">
+                      <td colSpan={4} className="py-3 px-4 font-semibold text-sm text-gray-300 uppercase tracking-wide">
                         Export & Sharing
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">PDF export</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">PDF export</td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
-                    </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">PowerPoint export</td>
-                      <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Shareable strategy links</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">PowerPoint export</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">White-label exports</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Shareable strategy links</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
+                    </tr>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">White-label exports</td>
+                      <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
 
                     {/* Collaboration & Team */}
-                    <tr className="bg-gray-50">
-                      <td colSpan={4} className="py-3 px-4 font-semibold text-sm text-gray-700 uppercase tracking-wide">
+                    <tr className="bg-gray-900">
+                      <td colSpan={4} className="py-3 px-4 font-semibold text-sm text-gray-300 uppercase tracking-wide">
                         Collaboration & Team
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Team members</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Team members</td>
                       <td className="py-4 px-4 text-center font-medium">1 user</td>
-                      <td className="py-4 px-4 text-center font-medium bg-blue-50">1 user</td>
+                      <td className="py-4 px-4 text-center font-medium bg-blue-500/10">1 user</td>
                       <td className="py-4 px-4 text-center font-medium">5+ users</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Strategy version comparison</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Strategy version comparison</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Dedicated account manager</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Dedicated account manager</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
 
                     {/* Support & Advanced */}
-                    <tr className="bg-gray-50">
-                      <td colSpan={4} className="py-3 px-4 font-semibold text-sm text-gray-700 uppercase tracking-wide">
+                    <tr className="bg-gray-900">
+                      <td colSpan={4} className="py-3 px-4 font-semibold text-sm text-gray-300 uppercase tracking-wide">
                         Support & Advanced Features
                       </td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Support level</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Support level</td>
                       <td className="py-4 px-4 text-center font-medium">Email</td>
-                      <td className="py-4 px-4 text-center font-medium bg-blue-50">Priority email</td>
+                      <td className="py-4 px-4 text-center font-medium bg-blue-500/10">Priority email</td>
                       <td className="py-4 px-4 text-center font-medium">Dedicated + SLA</td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">API access</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">API access</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Custom integrations</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Custom integrations</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Strategy templates library</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Strategy templates library</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
-                    <tr className="border-b border-gray-200 hover:bg-gray-50">
-                      <td className="py-4 px-4 text-gray-700">Custom training sessions</td>
+                    <tr className="border-b border-white/5 hover:bg-gray-900/50">
+                      <td className="py-4 px-4 text-gray-200">Custom training sessions</td>
                       <td className="py-4 px-4 text-center"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center bg-blue-50"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center bg-blue-500/10"><X className="w-5 h-5 text-gray-300 mx-auto" /></td>
                       <td className="py-4 px-4 text-center"><Check className="w-5 h-5 text-green-600 mx-auto" /></td>
                     </tr>
                   </tbody>
                   <tfoot>
-                    <tr className="border-t-2 border-gray-300">
+                    <tr className="border-t-2 border-white/10">
                       <td className="py-6 px-4"></td>
                       <td className="py-6 px-4 text-center">
                         <a href={isAuthenticated ? "/new-project" : getLoginUrl()}>
                           <Button variant="outline" className="w-full">Start with Starter</Button>
                         </a>
                       </td>
-                      <td className="py-6 px-4 text-center bg-blue-50">
+                      <td className="py-6 px-4 text-center bg-blue-500/10">
                         <a href={isAuthenticated ? "/new-project" : getLoginUrl()}>
                           <Button className="w-full">Go Professional</Button>
                         </a>
@@ -481,18 +481,18 @@ export default function Pricing() {
         </section>
 
         {/* Value Comparison */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-950">
           <div className="container mx-auto px-4 max-w-5xl">
             <h2 className="text-3xl font-bold text-center mb-12">Compare the Value</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="text-center">
+              <Card className="text-center bg-gray-900 border-white/10">
                 <CardHeader>
-                  <CardTitle className="text-lg text-gray-600">Marketing Consultant</CardTitle>
-                  <div className="text-3xl font-bold text-gray-400 mt-4">$25,000</div>
-                  <p className="text-sm text-gray-500 mt-2">per strategy project</p>
+                  <CardTitle className="text-lg text-gray-400">Marketing Consultant</CardTitle>
+                  <div className="text-3xl font-bold text-gray-300 mt-4">$25,000</div>
+                  <p className="text-sm text-gray-400 mt-2">per strategy project</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-gray-400 space-y-2">
                     <li>4-6 weeks delivery</li>
                     <li>Limited revisions</li>
                     <li>One-time deliverable</li>
@@ -501,14 +501,14 @@ export default function Pricing() {
                 </CardContent>
               </Card>
 
-              <Card className="text-center border-2 border-blue-500 shadow-lg">
+              <Card className="text-center border-2 border-blue-500 shadow-lg shadow-blue-500/20 bg-gray-900">
                 <CardHeader>
-                  <CardTitle className="text-lg text-blue-600">Taptico AI Professional</CardTitle>
-                  <div className="text-3xl font-bold text-blue-600 mt-4">$199</div>
-                  <p className="text-sm text-gray-500 mt-2">per month</p>
+                  <CardTitle className="text-lg text-blue-400">Taptico AI Professional</CardTitle>
+                  <div className="text-3xl font-bold text-blue-400 mt-4">$199</div>
+                  <p className="text-sm text-gray-400 mt-2">per month</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="text-sm text-gray-700 space-y-2 font-medium">
+                  <ul className="text-sm text-gray-200 space-y-2 font-medium">
                     <li>✓ Instant delivery</li>
                     <li>✓ Unlimited revisions</li>
                     <li>✓ 10 strategies/month</li>
@@ -517,14 +517,14 @@ export default function Pricing() {
                 </CardContent>
               </Card>
 
-              <Card className="text-center">
+              <Card className="text-center bg-gray-900 border-white/10">
                 <CardHeader>
-                  <CardTitle className="text-lg text-gray-600">Full-Time CMO</CardTitle>
-                  <div className="text-3xl font-bold text-gray-400 mt-4">$250,000</div>
-                  <p className="text-sm text-gray-500 mt-2">per year</p>
+                  <CardTitle className="text-lg text-gray-400">Full-Time CMO</CardTitle>
+                  <div className="text-3xl font-bold text-gray-300 mt-4">$250,000</div>
+                  <p className="text-sm text-gray-400 mt-2">per year</p>
                 </CardHeader>
                 <CardContent>
-                  <ul className="text-sm text-gray-600 space-y-2">
+                  <ul className="text-sm text-gray-400 space-y-2">
                     <li>$20,833/month cost</li>
                     <li>Benefits & overhead</li>
                     <li>Hiring time: 2-3 months</li>
@@ -537,7 +537,7 @@ export default function Pricing() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-950">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
             <div className="space-y-6">

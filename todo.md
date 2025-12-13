@@ -111,3 +111,10 @@
 - [x] Add visual indicators (checkmarks, X marks, feature limits)
 - [x] Implement responsive design for mobile viewing
 - [x] Add section to pricing page
+
+## Annual Billing Toggle
+- [x] Add monthly/annual toggle switch above pricing cards
+- [x] Calculate and display annual prices (16% discount)
+- [x] Add "Save 16%" badge to annual option
+- [x] Update pricing cards dynamically based on toggle
+- [x] Show monthly equivalent price for annual billing

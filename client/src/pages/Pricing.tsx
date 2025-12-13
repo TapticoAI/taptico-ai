@@ -3,16 +3,19 @@ import { getLoginUrl } from "@/const";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, X, ArrowRight, Sparkles } from "lucide-react";
+import React from "react";
 import { Link } from "wouter";
 import { PricingCalculator } from "@/components/PricingCalculator";
 
 export default function Pricing() {
   const { isAuthenticated } = useAuth();
+  const [billingCycle, setBillingCycle] = React.useState<"monthly" | "annual">("monthly");
 
   const tiers = [
     {
       name: "Starter",
-      price: 79,
+      monthlyPrice: 79,
+      annualPrice: 790,
       description: "Perfect for solopreneurs and early-stage startups",
       popular: false,
       features: [
@@ -32,7 +35,8 @@ export default function Pricing() {
     },
     {
       name: "Professional",
-      price: 199,
+      monthlyPrice: 199,
+      annualPrice: 1990,
       description: "Best for growing businesses and marketing managers",
       popular: true,
       features: [
@@ -52,7 +56,8 @@ export default function Pricing() {
     },
     {
       name: "Enterprise",
-      price: 499,
+      monthlyPrice: 499,
+      annualPrice: 4990,
       description: "For established companies and marketing teams",
       popular: false,
       features: [
@@ -119,8 +124,41 @@ export default function Pricing() {
           </div>
         </section>
 
+        {/* Billing Toggle */}
+        <section className="pb-8">
+          <div className="container mx-auto px-4">
+            <div className="flex justify-center">
+              <div className="inline-flex items-center gap-3 bg-gray-100 p-1 rounded-lg">
+                <button
+                  onClick={() => setBillingCycle("monthly")}
+                  className={`px-6 py-2 rounded-md font-medium transition-all ${
+                    billingCycle === "monthly"
+                      ? "bg-white text-blue-600 shadow-sm"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  Monthly
+                </button>
+                <button
+                  onClick={() => setBillingCycle("annual")}
+                  className={`px-6 py-2 rounded-md font-medium transition-all flex items-center gap-2 ${
+                    billingCycle === "annual"
+                      ? "bg-white text-blue-600 shadow-sm"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  Annual
+                  <span className="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full font-semibold">
+                    Save 16%
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Pricing Cards */}
-        <section className="py-12">
+        <section className="pb-12">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {tiers.map((tier) => (
@@ -141,10 +179,17 @@ export default function Pricing() {
                     <CardTitle className="text-2xl">{tier.name}</CardTitle>
                     <CardDescription className="text-sm">{tier.description}</CardDescription>
                     <div className="mt-4">
-                      <span className="text-4xl font-bold">${tier.price}</span>
+                      <span className="text-4xl font-bold">
+                        ${billingCycle === "monthly" ? tier.monthlyPrice : Math.round(tier.annualPrice / 12)}
+                      </span>
                       <span className="text-gray-600">/month</span>
                     </div>
-                    <p className="text-sm text-gray-500 mt-2">Billed monthly • Cancel anytime</p>
+                    <p className="text-sm text-gray-500 mt-2">
+                      {billingCycle === "monthly" 
+                        ? "Billed monthly • Cancel anytime"
+                        : `Billed annually at $${tier.annualPrice}/year • Save $${Math.round(tier.monthlyPrice * 12 - tier.annualPrice)}`
+                      }
+                    </p>
                   </CardHeader>
                   <CardContent className="flex-1">
                     <ul className="space-y-3">

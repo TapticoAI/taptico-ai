@@ -198,3 +198,12 @@
 - [x] Add "See Example Strategy" trigger button to landing page
 - [x] Implement modal open/close functionality
 - [x] Make modal scrollable for 2-page content
+
+## Strategy Sample Modal Redesign
+- [x] Rewrite all content to 7th grade reading level
+- [x] Add "Why this works" reasoning sections for each strategy decision
+- [x] Create detailed weekly/monthly task list with tactical steps
+- [x] Add cost estimates for each tool/tactic
+- [x] Add ROI projections for each expense
+- [x] Add export buttons (Notion, Asana, Google Calendar, Apple Calendar)
+- [x] Make task list more actionable and specific

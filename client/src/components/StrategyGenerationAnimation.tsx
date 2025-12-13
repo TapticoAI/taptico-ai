@@ -3,7 +3,7 @@ import { Check, Zap, TrendingUp, Target, Users, DollarSign, Calendar } from "luc
 
 export function StrategyGenerationAnimation() {
   return (
-    <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden opacity-50 pointer-events-none">
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-full max-w-4xl mx-auto px-8">
           {/* Animated Strategy Cards */}

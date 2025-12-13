@@ -185,3 +185,8 @@
 - [x] Integrate into hero section background
 - [x] Ensure animation doesn't distract from hero content
 - [x] Optimize performance and respect prefers-reduced-motion
+
+## Increase Animation Visibility
+- [x] Increase opacity of strategy generation animation from 20% to 50%
+- [x] Adjust background overlay to maintain text readability
+- [x] Make animation cards more prominent and visible

@@ -50,7 +50,7 @@ export default function Home() {
           {/* Strategy Generation Animation Background */}
           <StrategyGenerationAnimation />
           
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black" />
           
           {/* Animated gradient orbs */}
           <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />

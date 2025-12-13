@@ -190,3 +190,11 @@
 - [x] Increase opacity of strategy generation animation from 20% to 50%
 - [x] Adjust background overlay to maintain text readability
 - [x] Make animation cards more prominent and visible
+
+## Strategy Sample Modal
+- [x] Create StrategySampleModal component with Dialog from shadcn/ui
+- [x] Design realistic strategy document preview with all 7 sections
+- [x] Add professional formatting and styling
+- [x] Add "See Example Strategy" trigger button to landing page
+- [x] Implement modal open/close functionality
+- [x] Make modal scrollable for 2-page content

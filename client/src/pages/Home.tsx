@@ -6,6 +6,7 @@ import { trpc } from "@/lib/trpc";
 import { Loader2, Plus, Briefcase, TrendingUp, ArrowRight, Check, Zap, Target, Rocket, DollarSign, Clock, Shield } from "lucide-react";
 import { FeatureCard } from "@/components/FeatureCard";
 import { StrategyGenerationAnimation } from "@/components/StrategyGenerationAnimation";
+import { StrategySampleModal } from "@/components/StrategySampleModal";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -114,8 +115,19 @@ export default function Home() {
                 </Link>
               </div>
 
+              {/* Strategy Sample Link */}
+              <div className="pt-4">
+                <StrategySampleModal 
+                  trigger={
+                    <button className="text-blue-400 hover:text-blue-300 underline underline-offset-4 text-sm font-medium transition-colors">
+                      See Example Strategy →
+                    </button>
+                  }
+                />
+              </div>
+
               {/* Social proof */}
-              <div className="flex items-center justify-center gap-8 pt-8 text-sm text-gray-500">
+              <div className="flex items-center justify-center gap-8 pt-4 text-sm text-gray-500">
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-green-500" />
                   No credit card needed

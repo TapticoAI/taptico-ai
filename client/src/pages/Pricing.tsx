@@ -250,8 +250,8 @@ export default function Pricing() {
           <div className="container mx-auto px-4 max-w-4xl">
             <Card className="border-2 border-blue-500/30 bg-gradient-to-br from-blue-500/5 to-gray-900">
               <CardHeader>
-                <CardTitle className="text-2xl">Pay-Per-Strategy</CardTitle>
-                <CardDescription>No subscription needed • Perfect for occasional use</CardDescription>
+                <CardTitle className="text-2xl text-blue-500">Pay-Per-Strategy</CardTitle>
+                <CardDescription className="text-white">No subscription needed • Perfect for occasional use</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-between flex-wrap gap-4">
@@ -261,19 +261,19 @@ export default function Pricing() {
                     <ul className="mt-4 space-y-2">
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        <span className="text-sm">All 7 modules included</span>
+                        <span className="text-sm text-white">All 7 modules included</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        <span className="text-sm">3 regenerations included</span>
+                        <span className="text-sm text-white">3 regenerations included</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        <span className="text-sm">PDF export</span>
+                        <span className="text-sm text-white">PDF export</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <Check className="w-4 h-4 text-green-600" />
-                        <span className="text-sm">90-day access to strategy</span>
+                        <span className="text-sm text-white">90-day access to strategy</span>
                       </li>
                     </ul>
                   </div>
@@ -292,7 +292,7 @@ export default function Pricing() {
         </section>
 
         {/* Feature Comparison Table */}
-        <section className="py-20 bg-black">
+        <section className="pt-28 pb-20 bg-black">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-4">Compare Plans in Detail</h2>
@@ -309,7 +309,7 @@ export default function Pricing() {
                         <div className="text-xs text-gray-400">per month</div>
                       </th>
                       <th className="text-center py-4 px-4 font-semibold text-gray-200 w-1/6 bg-blue-500/10 relative">
-                        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
                           Most Popular
                         </div>
                         <div className="text-lg mt-2">Professional</div>

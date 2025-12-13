@@ -6,6 +6,7 @@ import { Check, X, ArrowRight, Sparkles } from "lucide-react";
 import React from "react";
 import { Link } from "wouter";
 import { PricingCalculator } from "@/components/PricingCalculator";
+import { PricingCard } from "@/components/PricingCard";
 
 export default function Pricing() {
   const { isAuthenticated } = useAuth();
@@ -109,16 +110,35 @@ export default function Pricing() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 text-center max-w-4xl">
-            <h1 className="text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">
+        <section className="py-20 relative overflow-hidden">
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-transparent animate-gradient" />
+          
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+                  animationDelay: `${Math.random() * 2}s`,
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="container mx-auto px-4 text-center max-w-4xl relative z-10">
+            <h1 className="text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 animate-gradient-text">
               Simple, Transparent Pricing
             </h1>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-gray-400 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               Get CMO-level strategic thinking for a fraction of the cost. One successful strategy pays for itself.
             </p>
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-6 py-3 rounded-full text-sm font-medium">
-              <Sparkles className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-6 py-3 rounded-full text-sm font-medium hover:bg-blue-500/20 hover:scale-105 transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <Sparkles className="w-4 h-4 animate-pulse" />
               Replace $250K/year CMO salary or $25K consultant projects
             </div>
           </div>
@@ -128,27 +148,27 @@ export default function Pricing() {
         <section className="pb-8">
           <div className="container mx-auto px-4">
             <div className="flex justify-center">
-              <div className="inline-flex items-center gap-3 bg-gray-900 border border-white/10 p-1 rounded-lg">
+              <div className="inline-flex items-center gap-3 bg-gray-900 border border-white/10 p-1 rounded-lg hover:border-blue-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
                 <button
                   onClick={() => setBillingCycle("monthly")}
-                  className={`px-6 py-2 rounded-md font-medium transition-all ${
+                  className={`px-6 py-2 rounded-md font-medium transition-all duration-300 ${
                     billingCycle === "monthly"
-                      ? "bg-blue-600 text-white shadow-sm"
-                      : "text-gray-400 hover:text-white"
+                      ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50 scale-105"
+                      : "text-gray-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   Monthly
                 </button>
                 <button
                   onClick={() => setBillingCycle("annual")}
-                  className={`px-6 py-2 rounded-md font-medium transition-all flex items-center gap-2 ${
+                  className={`px-6 py-2 rounded-md font-medium transition-all duration-300 flex items-center gap-2 ${
                     billingCycle === "annual"
-                      ? "bg-blue-600 text-white shadow-sm"
-                      : "text-gray-400 hover:text-white"
+                      ? "bg-blue-600 text-white shadow-lg shadow-blue-500/50 scale-105"
+                      : "text-gray-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
                   Annual
-                  <span className="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full font-semibold">
+                  <span className="text-xs bg-green-500 text-white px-2 py-0.5 rounded-full font-semibold animate-pulse">
                     Save 16%
                   </span>
                 </button>
@@ -161,78 +181,21 @@ export default function Pricing() {
         <section className="pb-12">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {tiers.map((tier) => (
-                <Card
+              {tiers.map((tier, index) => (
+                <PricingCard
                   key={tier.name}
-                  className={`relative flex flex-col ${
-                    tier.popular
-                      ? "border-blue-500 border-2 shadow-xl shadow-blue-500/20 scale-105 bg-gray-900"
-                      : "border-white/10 bg-gray-900"
-                  }`}
-                >
-                  {tier.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                      Most Popular
-                    </div>
-                  )}
-                  <CardHeader>
-                    <CardTitle className="text-2xl text-blue-500">{tier.name}</CardTitle>
-                    <CardDescription className="text-sm text-white">{tier.description}</CardDescription>
-                    <div className="mt-4">
-                      <span className="text-4xl font-bold text-blue-500">
-                        ${billingCycle === "monthly" ? tier.monthlyPrice : Math.round(tier.annualPrice / 12)}
-                      </span>
-                      <span className="text-gray-400">/month</span>
-                    </div>
-                    <p className="text-sm text-gray-400 mt-2">
-                      {billingCycle === "monthly" 
-                        ? "Billed monthly • Cancel anytime"
-                        : `Billed annually at $${tier.annualPrice}/year • Save $${Math.round(tier.monthlyPrice * 12 - tier.annualPrice)}`
-                      }
-                    </p>
-                  </CardHeader>
-                  <CardContent className="flex-1">
-                    <ul className="space-y-3">
-                      {tier.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          {feature.included ? (
-                            <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                          ) : (
-                            <X className="w-5 h-5 text-gray-300 flex-shrink-0 mt-0.5" />
-                          )}
-                          <span className={feature.included ? "text-white" : "text-gray-500"}>
-                            {feature.text}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter>
-                    {tier.name === "Enterprise" ? (
-                      <a href={tier.href} className="w-full">
-                        <Button
-                          className={`w-full ${!tier.popular ? "text-white hover:bg-white/10" : ""}`}
-                          variant={tier.popular ? "default" : "outline"}
-                          size="lg"
-                        >
-                          {tier.cta}
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </a>
-                    ) : (
-                      <a href={tier.href} className="w-full">
-                        <Button
-                          className={`w-full ${!tier.popular ? "text-white hover:bg-white/10" : ""}`}
-                          variant={tier.popular ? "default" : "outline"}
-                          size="lg"
-                        >
-                          {tier.cta}
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
-                      </a>
-                    )}
-                  </CardFooter>
-                </Card>
+                  name={tier.name}
+                  price={billingCycle === "monthly" ? tier.monthlyPrice : Math.round(tier.annualPrice / 12)}
+                  description={tier.description}
+                  popular={tier.popular}
+                  features={tier.features}
+                  cta={tier.cta}
+                  href={tier.href}
+                  billingCycle={billingCycle}
+                  annualPrice={tier.annualPrice}
+                  monthlyPrice={tier.monthlyPrice}
+                  index={index}
+                />
               ))}
             </div>
           </div>

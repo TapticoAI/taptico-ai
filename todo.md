@@ -207,3 +207,9 @@
 - [x] Add ROI projections for each expense
 - [x] Add export buttons (Notion, Asana, Google Calendar, Apple Calendar)
 - [x] Make task list more actionable and specific
+
+## Rewrite Strategy Sample for Local Business
+- [x] Change from TechFlow SaaS to Ralph's Roofing (Atlanta, GA)
+- [x] Update all channels to local business focus (Google Local, Nextdoor, local SEO)
+- [x] Update costs and tactics for home services industry
+- [x] Keep same structure, reasoning, and actionability

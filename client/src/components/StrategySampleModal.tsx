@@ -28,7 +28,7 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
       <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-white text-gray-900">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">Your Marketing Strategy</DialogTitle>
-          <p className="text-sm text-gray-600">TechFlow SaaS - Project Management for Developers</p>
+          <p className="text-sm text-gray-600">Ralph's Roofing - Atlanta, Georgia</p>
         </DialogHeader>
 
         {/* Export Buttons */}
@@ -83,13 +83,13 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
             </div>
             <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
               <p className="text-base text-gray-800 leading-relaxed mb-3">
-                <strong>Your Business:</strong> TechFlow helps software teams manage their projects better. You're selling to tech companies with 50-200 employees.
+                <strong>Your Business:</strong> Ralph's Roofing provides roof repair, replacement, and inspection services to homeowners in Atlanta and surrounding areas. You've been in business for 8 years with a team of 6 roofers.
               </p>
               <p className="text-base text-gray-800 leading-relaxed mb-3">
-                <strong>Your Goal:</strong> Get 150 people to request a demo every month (that's about 5 per day). You want each new customer to cost less than $800 to acquire.
+                <strong>Your Goal:</strong> Get 40 qualified leads per month (about 10 per week) for roof replacements and major repairs. You want each new customer to cost less than $200 to acquire.
               </p>
               <p className="text-base text-gray-800 leading-relaxed">
-                <strong>Your Big Challenge:</strong> You're competing against huge companies like Asana and Monday.com that everyone already knows about.
+                <strong>Your Big Challenge:</strong> Most people only think about roofing when they have a leak or storm damage. You need to be the first company they find when that happens.
               </p>
             </div>
             
@@ -100,7 +100,7 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                 <div>
                   <p className="font-semibold text-gray-900 mb-1">Why This Strategy Works:</p>
                   <p className="text-sm text-gray-700 leading-relaxed">
-                    Instead of trying to compete with everyone, we're focusing on one specific group: software developers. They hate using tools that aren't built for them. By becoming the "developer's choice," you'll stand out and attract customers who are willing to pay more and stay longer.
+                    When someone needs a roofer, they usually search Google or ask neighbors. We'll make sure you show up first in Google searches, get recommended in local Facebook groups, and have great reviews everywhere people look. This way, you're the obvious choice when someone needs roofing work.
                   </p>
                 </div>
               </div>
@@ -118,23 +118,23 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
             
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                <p className="font-semibold text-gray-900 mb-2">Engineering Managers</p>
-                <p className="text-sm text-gray-700">They lead teams of 10-50 developers and need tools that their team will actually use.</p>
+                <p className="font-semibold text-gray-900 mb-2">Homeowners 45-65</p>
+                <p className="text-sm text-gray-700">Own homes built 15-30 years ago that need roof replacement. Have $8,000-$15,000 to spend.</p>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                <p className="font-semibold text-gray-900 mb-2">CTOs</p>
-                <p className="text-sm text-gray-700">They want tools that connect with their existing systems (like GitHub and Slack).</p>
+                <p className="font-semibold text-gray-900 mb-2">Storm Damage Victims</p>
+                <p className="text-sm text-gray-700">Just experienced hail or wind damage. Need fast response and help with insurance claims.</p>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                <p className="font-semibold text-gray-900 mb-2">Product Teams</p>
-                <p className="text-sm text-gray-700">They're tired of tools that feel like they were made for marketing teams, not technical teams.</p>
+                <p className="font-semibold text-gray-900 mb-2">New Home Buyers</p>
+                <p className="text-sm text-gray-700">Bought a home with an old roof. Want to replace it before problems start.</p>
               </div>
             </div>
 
             <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
               <p className="font-semibold text-gray-900 mb-2">What Makes You Different:</p>
               <p className="text-base text-gray-800 italic">
-                "The only project management tool built by developers, for developers. Works with GitHub, has a command line tool, and an API for everything."
+                "Family-owned roofing company with 8 years serving Atlanta. We handle your insurance claim, offer 10-year workmanship warranty, and finish most jobs in 1-2 days."
               </p>
             </div>
 
@@ -144,7 +144,7 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                 <div>
                   <p className="font-semibold text-gray-900 mb-1">Why This Works:</p>
                   <p className="text-sm text-gray-700 leading-relaxed">
-                    Developers are a tight-knit community. When one developer finds a tool they love, they tell their friends. By focusing on this specific group, you'll get word-of-mouth growth that's way cheaper than advertising.
+                    People want a roofer they can trust with their biggest investment (their home). By focusing on homeowners in your area who need work done now, and showing you're local, experienced, and reliable, you'll win more jobs than competitors who just compete on price.
                   </p>
                 </div>
               </div>
@@ -165,28 +165,28 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
               <div className="bg-white p-5 rounded-lg border-2 border-green-200">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <p className="font-bold text-lg text-gray-900">1. Developer Communities (Top Priority)</p>
-                    <p className="text-sm text-gray-600">Where developers hang out online</p>
+                    <p className="font-bold text-lg text-gray-900">1. Google Local Search (Top Priority)</p>
+                    <p className="text-sm text-gray-600">When people search "roofer near me"</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-600">Cost</p>
-                    <p className="font-bold text-green-600">$3,000/month</p>
+                    <p className="font-bold text-green-600">$4,200/month</p>
                   </div>
                 </div>
                 <p className="text-sm text-gray-700 mb-3">
-                  Developers spend time on specific websites and listen to certain podcasts. We'll show up where they already are.
+                  Most people who need a roofer start by searching Google. We'll make sure you show up at the top of search results for "roofing Atlanta", "roof repair near me", and "emergency roofer".
                 </p>
                 <div className="bg-gray-50 p-3 rounded">
                   <p className="text-xs font-semibold text-gray-700 mb-2">What you'll do:</p>
                   <ul className="text-xs text-gray-700 space-y-1">
-                    <li>• Sponsor 2 developer podcasts ($1,500/month each)</li>
-                    <li>• Post helpful content on Dev.to and Hacker News (free, just takes time)</li>
-                    <li>• Host monthly webinars teaching developers how to improve their workflow (free)</li>
+                    <li>• Google Local Service Ads ($2,500/month) - Show up first with Google Guaranteed badge</li>
+                    <li>• Google Search Ads ($1,500/month) - Appear when people search roofing terms</li>
+                    <li>• Optimize your Google Business Profile ($200/month for photos/posts)</li>
                   </ul>
                 </div>
                 <div className="mt-3 bg-green-50 p-3 rounded border border-green-200">
                   <p className="text-xs font-semibold text-green-800">Expected Result:</p>
-                  <p className="text-xs text-green-700">40-50 demo requests per month • ROI: 15x (every $1 spent brings $15 in revenue)</p>
+                  <p className="text-xs text-green-700">20-25 leads per month • ROI: 12x (every $1 spent brings $12 in revenue)</p>
                 </div>
               </div>
 
@@ -194,28 +194,29 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
               <div className="bg-white p-5 rounded-lg border-2 border-blue-200">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <p className="font-bold text-lg text-gray-900">2. Educational Content</p>
-                    <p className="text-sm text-gray-600">Teaching developers useful things</p>
+                    <p className="font-bold text-lg text-gray-900">2. Local Facebook & Nextdoor</p>
+                    <p className="text-sm text-gray-600">Where neighbors recommend businesses</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-600">Cost</p>
-                    <p className="font-bold text-blue-600">$4,500/month</p>
+                    <p className="font-bold text-blue-600">$2,800/month</p>
                   </div>
                 </div>
                 <p className="text-sm text-gray-700 mb-3">
-                  Write blog posts and guides that help developers solve real problems. When they find your content helpful, they'll check out your product.
+                  People trust recommendations from their neighbors. We'll get you active in local Facebook groups and Nextdoor where homeowners ask for roofing recommendations.
                 </p>
                 <div className="bg-gray-50 p-3 rounded">
                   <p className="text-xs font-semibold text-gray-700 mb-2">What you'll do:</p>
                   <ul className="text-xs text-gray-700 space-y-1">
-                    <li>• Hire a technical writer ($3,000/month for 8 blog posts)</li>
-                    <li>• Use SEO tools to find what developers are searching for ($150/month for Ahrefs)</li>
-                    <li>• Create free tools developers can use ($1,350/month for developer time)</li>
+                    <li>• Facebook Ads targeting homeowners in your service area ($2,000/month)</li>
+                    <li>• Nextdoor Neighborhood Sponsor ($300/month)</li>
+                    <li>• Post helpful roofing tips weekly in local groups (free, takes 30 min/week)</li>
+                    <li>• Run "Roof Inspection Special" ads before storm season ($500/month)</li>
                   </ul>
                 </div>
                 <div className="mt-3 bg-blue-50 p-3 rounded border border-blue-200">
                   <p className="text-xs font-semibold text-blue-800">Expected Result:</p>
-                  <p className="text-xs text-blue-700">50-60 demo requests per month • ROI: 12x</p>
+                  <p className="text-xs text-blue-700">12-15 leads per month • ROI: 10x</p>
                 </div>
               </div>
 
@@ -223,28 +224,28 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
               <div className="bg-white p-5 rounded-lg border-2 border-purple-200">
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <p className="font-bold text-lg text-gray-900">3. Paid Advertising</p>
-                    <p className="text-sm text-gray-600">Showing ads to the right people</p>
+                    <p className="font-bold text-lg text-gray-900">3. Review Sites & Referrals</p>
+                    <p className="text-sm text-gray-600">Building trust through reputation</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm text-gray-600">Cost</p>
-                    <p className="font-bold text-purple-600">$5,250/month</p>
+                    <p className="font-bold text-purple-600">$1,500/month</p>
                   </div>
                 </div>
                 <p className="text-sm text-gray-700 mb-3">
-                  Run ads on Google and LinkedIn targeting people who are actively looking for project management tools.
+                  Before hiring a roofer, people check reviews on Google, Yelp, and Angi. We'll build up your reviews and make it easy for happy customers to refer you.
                 </p>
                 <div className="bg-gray-50 p-3 rounded">
                   <p className="text-xs font-semibold text-gray-700 mb-2">What you'll do:</p>
                   <ul className="text-xs text-gray-700 space-y-1">
-                    <li>• Google Ads targeting "developer project management" ($3,000/month)</li>
-                    <li>• LinkedIn ads for engineering managers ($2,000/month)</li>
-                    <li>• Retargeting people who visited your site ($250/month)</li>
+                    <li>• Angi (formerly Angie's List) membership ($800/month for leads)</li>
+                    <li>• Automated review request system ($200/month for software)</li>
+                    <li>• Referral rewards program ($500/month - $100 per referral)</li>
                   </ul>
                 </div>
                 <div className="mt-3 bg-purple-50 p-3 rounded border border-purple-200">
                   <p className="text-xs font-semibold text-purple-800">Expected Result:</p>
-                  <p className="text-xs text-purple-700">35-45 demo requests per month • ROI: 8x</p>
+                  <p className="text-xs text-purple-700">8-10 leads per month • ROI: 8x</p>
                 </div>
               </div>
             </div>
@@ -255,7 +256,7 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                 <div>
                   <p className="font-semibold text-gray-900 mb-1">Why This Mix Works:</p>
                   <p className="text-sm text-gray-700 leading-relaxed">
-                    We're combining three approaches: going where developers already are (communities), helping them for free (content), and reaching people actively looking for solutions (ads). This gives you multiple ways to reach your goal, so if one slows down, the others keep working.
+                    We're covering all three ways people find roofers: searching Google when they need help now (urgent), seeing ads and posts in their neighborhood (awareness), and checking reviews before making a decision (trust). This gives you multiple chances to reach the same customer and beat your competition.
                   </p>
                 </div>
               </div>
@@ -275,7 +276,7 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
             <div className="bg-white border-2 border-gray-200 rounded-lg p-5">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm">1</div>
-                <h4 className="text-lg font-bold text-gray-900">Month 1: Set Up Your Foundation</h4>
+                <h4 className="text-lg font-bold text-gray-900">Month 1: Get Your Foundation Ready</h4>
               </div>
               
               <div className="space-y-3">
@@ -283,35 +284,35 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <p className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    Week 1: Get Your Tools Ready
+                    Week 1: Set Up Your Online Presence
                   </p>
                   <div className="space-y-2 ml-6">
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Set up Google Analytics on your website</p>
-                        <p className="text-xs text-gray-600">Cost: Free • Time: 2 hours • Why: You need to see where your visitors come from</p>
+                        <p className="text-gray-800 font-medium">Claim and optimize your Google Business Profile</p>
+                        <p className="text-xs text-gray-600">Cost: Free • Time: 3 hours • Why: This is how you show up on Google Maps when people search</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Sign up for Ahrefs (SEO tool)</p>
-                        <p className="text-xs text-gray-600">Cost: $150/month • Why: Find out what developers are searching for on Google</p>
+                        <p className="text-gray-800 font-medium">Take 20 professional photos of your work (before/after)</p>
+                        <p className="text-xs text-gray-600">Cost: $300 for photographer • Why: Photos get 3x more clicks than listings without photos</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Create accounts on Dev.to and Hacker News</p>
-                        <p className="text-xs text-gray-600">Cost: Free • Time: 30 minutes • Why: These are where developers hang out</p>
+                        <p className="text-gray-800 font-medium">Sign up for Google Local Service Ads</p>
+                        <p className="text-xs text-gray-600">Cost: Free to set up • Time: 2 hours • Why: Get the Google Guaranteed badge and show up first</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Research and contact 5 developer podcasts</p>
-                        <p className="text-xs text-gray-600">Cost: Free • Time: 4 hours • Why: Find out their sponsorship prices and audience size</p>
+                        <p className="text-gray-800 font-medium">Create accounts on Nextdoor and join local Facebook groups</p>
+                        <p className="text-xs text-gray-600">Cost: Free • Time: 1 hour • Why: These are where neighbors recommend businesses</p>
                       </div>
                     </div>
                   </div>
@@ -321,28 +322,28 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <p className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    Week 2: Start Creating Content
+                    Week 2: Start Getting Reviews
                   </p>
                   <div className="space-y-2 ml-6">
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Hire a technical writer on Upwork</p>
-                        <p className="text-xs text-gray-600">Cost: $3,000/month • Why: You need someone who understands developers to write for them</p>
+                        <p className="text-gray-800 font-medium">Sign up for review management software (Podium or Birdeye)</p>
+                        <p className="text-xs text-gray-600">Cost: $200/month • Why: Automatically text customers asking for reviews after each job</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Write your first blog post: "10 GitHub Workflows Every Team Should Use"</p>
-                        <p className="text-xs text-gray-600">Cost: Included in writer cost • Why: This topic gets 5,000 searches per month</p>
+                        <p className="text-gray-800 font-medium">Call your 10 happiest past customers and ask for Google reviews</p>
+                        <p className="text-xs text-gray-600">Cost: Free • Time: 3 hours • Why: You need at least 10 reviews before people trust you</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Post an introduction on Dev.to</p>
-                        <p className="text-xs text-gray-600">Cost: Free • Time: 1 hour • Why: Start building your presence in the community</p>
+                        <p className="text-gray-800 font-medium">Join Angi (Angie's List) as a service provider</p>
+                        <p className="text-xs text-gray-600">Cost: $800/month • Why: Homeowners search here specifically for contractors</p>
                       </div>
                     </div>
                   </div>
@@ -358,22 +359,22 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Set up Google Ads account and create 3 ad campaigns</p>
-                        <p className="text-xs text-gray-600">Cost: $3,000/month • Why: Reach people searching for "developer project management"</p>
+                        <p className="text-gray-800 font-medium">Start Google Local Service Ads with $2,500/month budget</p>
+                        <p className="text-xs text-gray-600">Cost: $2,500/month • Why: Only pay when someone calls you, guaranteed to show up first</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Set up LinkedIn ads targeting engineering managers</p>
-                        <p className="text-xs text-gray-600">Cost: $2,000/month • Why: Reach decision-makers at tech companies</p>
+                        <p className="text-gray-800 font-medium">Launch Google Search Ads targeting "roof repair Atlanta"</p>
+                        <p className="text-xs text-gray-600">Cost: $1,500/month • Why: Catch people actively searching for roofing help</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Publish second blog post and share on social media</p>
-                        <p className="text-xs text-gray-600">Cost: Included • Time: 1 hour • Why: Build momentum and start getting organic traffic</p>
+                        <p className="text-gray-800 font-medium">Create Facebook ad: "Free Roof Inspection - $0 if No Issues Found"</p>
+                        <p className="text-xs text-gray-600">Cost: $2,000/month • Why: Low-risk offer gets people to raise their hand</p>
                       </div>
                     </div>
                   </div>
@@ -383,28 +384,28 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <p className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
                     <Clock className="w-4 h-4" />
-                    Week 4: Analyze and Adjust
+                    Week 4: Build Community Presence
                   </p>
                   <div className="space-y-2 ml-6">
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Review your Google Ads performance</p>
-                        <p className="text-xs text-gray-600">Cost: Free • Time: 2 hours • Why: See which ads are working and pause the ones that aren't</p>
+                        <p className="text-gray-800 font-medium">Become a Nextdoor Neighborhood Sponsor</p>
+                        <p className="text-xs text-gray-600">Cost: $300/month • Why: Your business shows up when neighbors ask for roofer recommendations</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Sign sponsorship deal with your first podcast</p>
-                        <p className="text-xs text-gray-600">Cost: $1,500/month • Why: Get in front of 10,000+ developers who trust the host</p>
+                        <p className="text-gray-800 font-medium">Post helpful tip in 5 local Facebook groups: "5 Signs Your Roof Needs Attention"</p>
+                        <p className="text-xs text-gray-600">Cost: Free • Time: 1 hour • Why: Helpful content builds trust and gets shared</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Plan your first webinar for next month</p>
-                        <p className="text-xs text-gray-600">Cost: $99/month for Zoom • Why: Webinars convert 3x better than regular content</p>
+                        <p className="text-gray-800 font-medium">Review your ad performance and adjust budgets</p>
+                        <p className="text-xs text-gray-600">Cost: Free • Time: 2 hours • Why: Stop spending on ads that don't work, spend more on ones that do</p>
                       </div>
                     </div>
                   </div>
@@ -412,8 +413,8 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
               </div>
 
               <div className="mt-4 bg-green-50 p-3 rounded border border-green-200">
-                <p className="text-sm font-semibold text-green-800">Month 1 Total Cost: $12,749</p>
-                <p className="text-xs text-green-700">Expected Demo Requests: 30-40 • Cost per Demo: $318-$425</p>
+                <p className="text-sm font-semibold text-green-800">Month 1 Total Cost: $8,800</p>
+                <p className="text-xs text-green-700">Expected Leads: 15-20 • Cost per Lead: $440-$587 • Close Rate: 30% = 5-6 new customers</p>
               </div>
             </div>
 
@@ -431,36 +432,36 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Double your content output to 8 blog posts</p>
-                        <p className="text-xs text-gray-600">Why: Your first posts are starting to rank on Google, now capitalize on it</p>
+                        <p className="text-gray-800 font-medium">You now have 15-20 Google reviews (from happy customers)</p>
+                        <p className="text-xs text-gray-600">Why: More reviews = higher ranking in Google search results</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Host your first webinar: "5 Ways to Speed Up Your Development Workflow"</p>
-                        <p className="text-xs text-gray-600">Cost: $99/month Zoom • Expected: 50-100 attendees, 10-15 demos</p>
+                        <p className="text-gray-800 font-medium">Launch referral program: $100 gift card for every referral</p>
+                        <p className="text-xs text-gray-600">Cost: $500/month (5 referrals) • Why: Happy customers are your best salespeople</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Add second podcast sponsorship</p>
-                        <p className="text-xs text-gray-600">Cost: $1,500/month • Now reaching 20,000+ developers monthly</p>
+                        <p className="text-gray-800 font-medium">Run storm season Facebook ad: "Hail Damage? Free Inspection + Insurance Help"</p>
+                        <p className="text-xs text-gray-600">Cost: Additional $500/month • Expected: 8-10 extra leads from storm damage</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Optimize your ads based on Month 1 data</p>
-                        <p className="text-xs text-gray-600">Why: Cut ads that aren't working, spend more on ads that are</p>
+                        <p className="text-gray-800 font-medium">Post weekly roofing tips on Facebook and Nextdoor</p>
+                        <p className="text-xs text-gray-600">Cost: Free • Time: 30 min/week • Why: Stay top-of-mind in your community</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Release your first free tool: "GitHub Sprint Planner"</p>
-                        <p className="text-xs text-gray-600">Cost: $1,350 developer time • Why: Free tools get shared and bring traffic</p>
+                        <p className="text-gray-800 font-medium">Optimize Google Ads based on Month 1 data</p>
+                        <p className="text-xs text-gray-600">Why: Double down on keywords that brought you customers</p>
                       </div>
                     </div>
                   </div>
@@ -468,8 +469,8 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
               </div>
 
               <div className="mt-4 bg-green-50 p-3 rounded border border-green-200">
-                <p className="text-sm font-semibold text-green-800">Month 2 Total Cost: $14,099</p>
-                <p className="text-xs text-green-700">Expected Demo Requests: 70-90 • Cost per Demo: $156-$201</p>
+                <p className="text-sm font-semibold text-green-800">Month 2 Total Cost: $9,000</p>
+                <p className="text-xs text-green-700">Expected Leads: 30-35 • Cost per Lead: $257-$300 • Close Rate: 30% = 9-11 new customers</p>
               </div>
             </div>
 
@@ -477,7 +478,7 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
             <div className="bg-white border-2 border-gray-200 rounded-lg p-5">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white font-bold text-sm">3</div>
-                <h4 className="text-lg font-bold text-gray-900">Month 3: Scale What Works</h4>
+                <h4 className="text-lg font-bold text-gray-900">Month 3: Hit Your Goal</h4>
               </div>
               
               <div className="space-y-3">
@@ -487,36 +488,36 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Increase ad spend on your best-performing campaigns</p>
-                        <p className="text-xs text-gray-600">Cost: +$2,000/month • Why: If something's working, do more of it</p>
+                        <p className="text-gray-800 font-medium">You're now #1 in Google Local Pack for "roofer Atlanta"</p>
+                        <p className="text-xs text-gray-600">Result: Getting 5-8 organic calls per week without paying for ads</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Host second webinar with Q&A session</p>
-                        <p className="text-xs text-gray-600">Expected: 100-150 attendees (your audience is growing!)</p>
+                        <p className="text-gray-800 font-medium">You have 30+ five-star Google reviews</p>
+                        <p className="text-xs text-gray-600">Result: 60% of people who see your profile call you (vs 20% before)</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Start partnership talks with GitHub and GitLab</p>
-                        <p className="text-xs text-gray-600">Cost: Free • Why: Get featured in their marketplaces for free exposure</p>
+                        <p className="text-gray-800 font-medium">Your Facebook ads are dialed in - only running the best performers</p>
+                        <p className="text-xs text-gray-600">Result: Cost per lead dropped from $100 to $65</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Your blog now has 20+ posts and ranks for 50+ keywords</p>
-                        <p className="text-xs text-gray-600">Result: Organic traffic brings 30-40 demos without any ad spend</p>
+                        <p className="text-gray-800 font-medium">Referrals are coming in regularly (2-3 per week)</p>
+                        <p className="text-xs text-gray-600">Result: 8-12 leads per month from happy customer referrals</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
                       <div className="text-sm">
-                        <p className="text-gray-800 font-medium">Release second free tool and promote on Product Hunt</p>
-                        <p className="text-xs text-gray-600">Cost: $1,350 • Expected: 500+ upvotes, 2,000+ visitors, 20-30 demos</p>
+                        <p className="text-gray-800 font-medium">You're the go-to roofer in 3 Nextdoor neighborhoods</p>
+                        <p className="text-xs text-gray-600">Result: Getting tagged in 5-10 recommendation threads per month</p>
                       </div>
                     </div>
                   </div>
@@ -524,8 +525,8 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
               </div>
 
               <div className="mt-4 bg-green-50 p-3 rounded border border-green-200">
-                <p className="text-sm font-semibold text-green-800">Month 3 Total Cost: $16,099</p>
-                <p className="text-xs text-green-700">Expected Demo Requests: 120-150 • Cost per Demo: $107-$134</p>
+                <p className="text-sm font-semibold text-green-800">Month 3 Total Cost: $8,500</p>
+                <p className="text-xs text-green-700">Expected Leads: 40-50 • Cost per Lead: $170-$213 • Close Rate: 30% = 12-15 new customers</p>
               </div>
             </div>
           </section>
@@ -541,29 +542,29 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
 
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-5 rounded-lg border-2 border-blue-200">
-                <p className="text-sm font-semibold text-gray-700 mb-1">Demo Requests</p>
-                <p className="text-3xl font-bold text-blue-600 mb-1">150/month</p>
+                <p className="text-sm font-semibold text-gray-700 mb-1">Monthly Leads</p>
+                <p className="text-3xl font-bold text-blue-600 mb-1">40-50</p>
                 <p className="text-xs text-gray-600">Your goal by end of Month 3</p>
                 <div className="mt-3 pt-3 border-t border-blue-200">
-                  <p className="text-xs text-gray-700"><strong>How to track:</strong> Count form submissions on your "Request Demo" page</p>
+                  <p className="text-xs text-gray-700"><strong>How to track:</strong> Count every phone call and form submission requesting a quote</p>
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-5 rounded-lg border-2 border-purple-200">
-                <p className="text-sm font-semibold text-gray-700 mb-1">Cost Per Customer</p>
-                <p className="text-3xl font-bold text-purple-600 mb-1">$750</p>
-                <p className="text-xs text-gray-600">Under your $800 target</p>
+                <p className="text-sm font-semibold text-gray-700 mb-1">Cost Per Lead</p>
+                <p className="text-3xl font-bold text-purple-600 mb-1">$170</p>
+                <p className="text-xs text-gray-600">Well under your $200 target</p>
                 <div className="mt-3 pt-3 border-t border-purple-200">
-                  <p className="text-xs text-gray-700"><strong>How to calculate:</strong> Total marketing spend ÷ number of new customers</p>
+                  <p className="text-xs text-gray-700"><strong>How to calculate:</strong> Total marketing spend ÷ number of leads</p>
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-green-100 p-5 rounded-lg border-2 border-green-200">
-                <p className="text-sm font-semibold text-gray-700 mb-1">Demo to Customer Rate</p>
-                <p className="text-3xl font-bold text-green-600 mb-1">12%</p>
-                <p className="text-xs text-gray-600">12 out of 100 demos buy</p>
+                <p className="text-sm font-semibold text-gray-700 mb-1">Close Rate</p>
+                <p className="text-3xl font-bold text-green-600 mb-1">30%</p>
+                <p className="text-xs text-gray-600">3 out of 10 leads become customers</p>
                 <div className="mt-3 pt-3 border-t border-green-200">
-                  <p className="text-xs text-gray-700"><strong>How to track:</strong> Number of customers ÷ number of demos given</p>
+                  <p className="text-xs text-gray-700"><strong>How to track:</strong> Number of signed contracts ÷ number of quotes given</p>
                 </div>
               </div>
             </div>
@@ -574,7 +575,7 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                 <div>
                   <p className="font-semibold text-gray-900 mb-1">What These Numbers Mean:</p>
                   <p className="text-sm text-gray-700 leading-relaxed">
-                    If you hit these targets, you'll be getting 150 demos per month. With a 12% conversion rate, that's 18 new customers monthly. If each customer pays $200/month and stays for 24 months on average, that's $86,400 in new monthly revenue from a $15,000 marketing investment. That's a 5.7x return!
+                    If you hit these targets, you'll be getting 45 leads per month. With a 30% close rate, that's 13-14 new roofing jobs monthly. If your average job is $8,500, that's $110,500 in new revenue from an $8,500 marketing investment. That's a 13x return on your money!
                   </p>
                 </div>
               </div>
@@ -587,90 +588,90 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
               <div className="w-10 h-10 rounded-lg bg-pink-500 flex items-center justify-center">
                 <DollarSign className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Tools You'll Need (Total: $15,099/month)</h3>
+              <h3 className="text-xl font-bold text-gray-900">Tools You'll Need (Total: $8,500/month)</h3>
             </div>
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="font-semibold text-gray-900 mb-2">Content & SEO</p>
+                <p className="font-semibold text-gray-900 mb-2">Google Advertising</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Technical Writer (Upwork)</span>
-                    <span className="font-semibold">$3,000</span>
+                    <span className="text-gray-700">Google Local Service Ads</span>
+                    <span className="font-semibold">$2,500</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Ahrefs (SEO research)</span>
-                    <span className="font-semibold">$150</span>
+                    <span className="text-gray-700">Google Search Ads</span>
+                    <span className="font-semibold">$1,500</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Developer Time (free tools)</span>
-                    <span className="font-semibold">$1,350</span>
+                    <span className="text-gray-700">Google Business Profile (photos/posts)</span>
+                    <span className="font-semibold">$200</span>
                   </div>
                   <div className="flex justify-between pt-2 border-t border-gray-200">
                     <span className="text-gray-900 font-semibold">Subtotal</span>
-                    <span className="font-bold text-blue-600">$4,500</span>
+                    <span className="font-bold text-blue-600">$4,200</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="font-semibold text-gray-900 mb-2">Advertising</p>
+                <p className="font-semibold text-gray-900 mb-2">Social & Community</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Google Ads</span>
-                    <span className="font-semibold">$3,000</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-700">LinkedIn Ads</span>
+                    <span className="text-gray-700">Facebook Ads</span>
                     <span className="font-semibold">$2,000</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Retargeting Ads</span>
-                    <span className="font-semibold">$250</span>
+                    <span className="text-gray-700">Nextdoor Sponsor</span>
+                    <span className="font-semibold">$300</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-700">Storm Season Ads</span>
+                    <span className="font-semibold">$500</span>
                   </div>
                   <div className="flex justify-between pt-2 border-t border-gray-200">
                     <span className="text-gray-900 font-semibold">Subtotal</span>
-                    <span className="font-bold text-purple-600">$5,250</span>
+                    <span className="font-bold text-purple-600">$2,800</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="font-semibold text-gray-900 mb-2">Community & Sponsorships</p>
+                <p className="font-semibold text-gray-900 mb-2">Reviews & Referrals</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Podcast Sponsorships (2)</span>
-                    <span className="font-semibold">$3,000</span>
+                    <span className="text-gray-700">Angi Membership</span>
+                    <span className="font-semibold">$800</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Dev.to & Hacker News</span>
-                    <span className="font-semibold">Free</span>
+                    <span className="text-gray-700">Review Software (Podium/Birdeye)</span>
+                    <span className="font-semibold">$200</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-700">Referral Rewards (5 @ $100)</span>
+                    <span className="font-semibold">$500</span>
                   </div>
                   <div className="flex justify-between pt-2 border-t border-gray-200">
                     <span className="text-gray-900 font-semibold">Subtotal</span>
-                    <span className="font-bold text-green-600">$3,000</span>
+                    <span className="font-bold text-green-600">$1,500</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="font-semibold text-gray-900 mb-2">Software & Tools</p>
+                <p className="font-semibold text-gray-900 mb-2">One-Time Setup</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-gray-700">Google Analytics</span>
+                    <span className="text-gray-700">Professional Photos</span>
+                    <span className="font-semibold">$300</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-700">Google Business Profile Setup</span>
                     <span className="font-semibold">Free</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-700">Zoom (webinars)</span>
-                    <span className="font-semibold">$99</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-700">Email Marketing (Mailchimp)</span>
-                    <span className="font-semibold">$250</span>
                   </div>
                   <div className="flex justify-between pt-2 border-t border-gray-200">
                     <span className="text-gray-900 font-semibold">Subtotal</span>
-                    <span className="font-bold text-orange-600">$349</span>
+                    <span className="font-bold text-orange-600">$300</span>
                   </div>
                 </div>
               </div>
@@ -682,11 +683,11 @@ export function StrategySampleModal({ trigger }: StrategySampleModalProps) {
                   <p className="text-lg font-bold text-gray-900">Total Monthly Investment</p>
                   <p className="text-sm text-gray-600">Everything you need to execute this strategy</p>
                 </div>
-                <p className="text-4xl font-bold text-green-600">$15,099</p>
+                <p className="text-4xl font-bold text-green-600">$8,500</p>
               </div>
               <div className="mt-4 pt-4 border-t border-green-200">
                 <p className="text-sm text-gray-700">
-                  <strong>Expected Return:</strong> 150 demos/month → 18 new customers → $86,400 in new monthly recurring revenue by Month 3
+                  <strong>Expected Return:</strong> 45 leads/month → 13-14 new customers → $110,500 in new revenue by Month 3 (13x ROI)
                 </p>
               </div>
             </div>

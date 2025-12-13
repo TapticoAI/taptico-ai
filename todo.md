@@ -59,3 +59,12 @@
 - [x] End-to-end testing of strategy generation flow
 - [x] Test export functionality
 - [x] Create initial checkpoint
+
+## Rebranding to Taptico AI
+- [x] Upload Taptico logo to project
+- [x] Update application name from "AI CMO" to "Taptico AI"
+- [x] Update tagline and branding text
+- [x] Update logo in header/navigation
+- [x] Update landing page branding
+- [x] Update page titles and meta information
+- [x] Update footer and copyright information

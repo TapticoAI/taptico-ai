@@ -104,11 +104,12 @@ export default function NewProject() {
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary/30 to-accent/10">
       {/* Header */}
       <header className="border-b bg-card/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-4 flex items-center gap-4">
           <Button variant="ghost" onClick={() => setLocation("/")} className="gap-2">
             <ArrowLeft className="h-4 w-4" />
             Back to Projects
           </Button>
+          <img src="/taptico-logo.png" alt="Taptico" className="h-8" />
         </div>
       </header>
 

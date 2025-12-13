@@ -180,15 +180,15 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-card sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+      <header className="border-b bg-card sticky top-0 z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
-              <Button variant="ghost" size="sm" onClick={() => setLocation("/")} className="gap-2">
+              <Button variant="ghost" size="sm" onClick={() => setLocation("/")}>
                 <ArrowLeft className="h-4 w-4" />
-                Back
               </Button>
-              <div>
+              <img src="/taptico-logo.png" alt="Taptico" className="h-8" />
+              <div className="border-l pl-4">
                 <h1 className="text-xl font-bold">{project.businessName}</h1>
                 <p className="text-sm text-muted-foreground">{project.industry}</p>
               </div>

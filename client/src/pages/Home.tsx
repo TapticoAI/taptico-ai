@@ -27,12 +27,15 @@ export default function Home() {
         <div className="container mx-auto px-4 py-20">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-4">
+              <div className="mb-8">
+                <img src="/taptico-logo.png" alt="Taptico" className="h-16 mx-auto mb-6" />
+              </div>
               <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
                 Your AI-Powered
-                <span className="block text-gradient">Chief Marketing Officer</span>
+                <span className="block text-gradient">Marketing Strategy Platform</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Generate elite, PhD-level marketing strategies in minutes. Get defensible, actionable plans that drive real growth.
+                Generate elite, PhD-level marketing strategies in minutes with Taptico AI. Get defensible, actionable plans that drive real growth.
               </p>
             </div>
 
@@ -90,9 +93,8 @@ export default function Home() {
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold">AI CMO</h1>
-            <p className="text-sm text-muted-foreground">Elite Marketing Strategy Generator</p>
+          <div className="flex items-center gap-3">
+            <img src="/taptico-logo.png" alt="Taptico" className="h-10" />
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-muted-foreground">

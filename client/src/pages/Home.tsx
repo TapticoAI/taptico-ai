@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { getLoginUrl } from "@/const";
 import { trpc } from "@/lib/trpc";
 import { Loader2, Plus, Briefcase, TrendingUp, ArrowRight, Check, Zap, Target, Rocket, DollarSign, Clock, Shield } from "lucide-react";
+import { FeatureCard } from "@/components/FeatureCard";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -43,45 +44,65 @@ export default function Home() {
         {/* Hero Section */}
         <div className="relative overflow-hidden">
           {/* Animated background grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a10_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a10_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a10_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a10_1px,transparent_1px)] bg-[size:4rem_4rem] animate-gradient" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
+          
+          {/* Animated gradient orbs */}
+          <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          
+          {/* Floating particles */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {[...Array(30)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-blue-400/40 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animation: `float ${3 + Math.random() * 5}s ease-in-out infinite`,
+                  animationDelay: `${Math.random() * 3}s`,
+                }}
+              />
+            ))}
+          </div>
           
           <div className="container relative mx-auto px-4 py-32 md:py-40">
             <div className="max-w-5xl mx-auto text-center space-y-8">
               {/* Main headline */}
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium">
-                  <Zap className="w-4 h-4" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium hover:bg-blue-500/20 hover:scale-105 transition-all duration-300 animate-fade-in-up">
+                  <Zap className="w-4 h-4 animate-pulse" />
                   Get Expert Marketing Strategy in Minutes
                 </div>
                 
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-                  Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">AI Marketing</span>
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                  Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 animate-gradient-text">AI Marketing</span>
                   <br />
                   Expert
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                   Get the same marketing strategy a $250,000 CMO would create—for less than your monthly coffee budget.
                 </p>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
                 <Button 
                   size="lg" 
                   asChild 
-                  className="text-lg px-10 py-7 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all"
+                  className="text-lg px-10 py-7 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 group"
                 >
                   <a href={getLoginUrl()}>
-                    Start Free <ArrowRight className="ml-2 h-5 w-5" />
+                    Start Free <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
                 <Link href="/pricing">
                   <Button 
                     size="lg" 
                     variant="outline" 
-                    className="text-lg px-10 py-7 border-white/20 hover:bg-white/5 rounded-xl"
+                    className="text-lg px-10 py-7 border-white/20 hover:bg-white/5 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 rounded-xl transition-all duration-300"
                   >
                     See Pricing
                   </Button>
@@ -108,57 +129,52 @@ export default function Home() {
         </div>
 
         {/* Value Props - Simple 3-column */}
-        <div className="bg-gradient-to-b from-black to-gray-950 py-24">
-          <div className="container mx-auto px-4">
+        <div className="bg-gradient-to-b from-black to-gray-950 py-24 relative overflow-hidden">
+          {/* Animated background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 animate-gradient" />
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                  <DollarSign className="w-8 h-8 text-blue-400" />
-                </div>
-                <h3 className="text-2xl font-bold">Save $249,000/Year</h3>
-                <p className="text-gray-400 leading-relaxed">
-                  Skip the expensive CMO hire. Get the same expert strategy for pennies on the dollar.
-                </p>
-              </div>
-
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                  <Clock className="w-8 h-8 text-blue-400" />
-                </div>
-                <h3 className="text-2xl font-bold">Ready in 5 Minutes</h3>
-                <p className="text-gray-400 leading-relaxed">
-                  No more waiting weeks for consultants. Get your complete strategy today.
-                </p>
-              </div>
-
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                  <Target className="w-8 h-8 text-blue-400" />
-                </div>
-                <h3 className="text-2xl font-bold">Built for Your Business</h3>
-                <p className="text-gray-400 leading-relaxed">
-                  Every strategy is custom-made for your specific business and goals.
-                </p>
-              </div>
+              <FeatureCard
+                icon={<DollarSign className="w-8 h-8 text-blue-400" />}
+                title="Save $249,000/Year"
+                description="Skip the expensive CMO hire. Get the same expert strategy for pennies on the dollar."
+                index={0}
+              />
+              <FeatureCard
+                icon={<Clock className="w-8 h-8 text-blue-400" />}
+                title="Ready in 5 Minutes"
+                description="No more waiting weeks for consultants. Get your complete strategy today."
+                index={1}
+              />
+              <FeatureCard
+                icon={<Target className="w-8 h-8 text-blue-400" />}
+                title="Built for Your Business"
+                description="Every strategy is custom-made for your specific business and goals."
+                index={2}
+              />
             </div>
           </div>
         </div>
 
         {/* How It Works - 3 Simple Steps */}
-        <div className="bg-gray-950 py-24">
-          <div className="container mx-auto px-4">
+        <div className="bg-gray-950 py-24 relative overflow-hidden">
+          {/* Animated gradient orb */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
-              <p className="text-xl text-gray-400">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up">How It Works</h2>
+              <p className="text-xl text-gray-400 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                 Three simple steps to your marketing strategy
               </p>
             </div>
 
             <div className="max-w-5xl mx-auto space-y-16">
               {/* Step 1 */}
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="grid md:grid-cols-2 gap-12 items-center group hover:scale-[1.02] transition-transform duration-500">
                 <div className="space-y-4">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold animate-pulse-glow group-hover:scale-110 transition-transform duration-300">
                     1
                   </div>
                   <h3 className="text-3xl font-bold">Tell Us About Your Business</h3>
@@ -180,18 +196,18 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
-                <div className="bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl p-8 border border-white/10">
+                <div className="bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl p-8 border border-white/10 group-hover:border-blue-500/30 group-hover:shadow-xl group-hover:shadow-blue-500/10 transition-all duration-500">
                   <div className="bg-gray-900 rounded-xl p-6 space-y-4">
-                    <div className="h-3 bg-gray-800 rounded w-3/4"></div>
-                    <div className="h-3 bg-gray-800 rounded w-1/2"></div>
-                    <div className="h-3 bg-blue-500/30 rounded w-2/3"></div>
+                    <div className="h-3 bg-gray-800 rounded w-3/4 group-hover:bg-gray-700 transition-colors"></div>
+                    <div className="h-3 bg-gray-800 rounded w-1/2 group-hover:bg-gray-700 transition-colors"></div>
+                    <div className="h-3 bg-blue-500/30 rounded w-2/3 group-hover:bg-blue-500/50 transition-colors"></div>
                   </div>
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="order-2 md:order-1 bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl p-8 border border-white/10">
+              <div className="grid md:grid-cols-2 gap-12 items-center group hover:scale-[1.02] transition-transform duration-500">
+                <div className="order-2 md:order-1 bg-gradient-to-br from-blue-500/10 to-transparent rounded-2xl p-8 border border-white/10 group-hover:border-blue-500/30 group-hover:shadow-xl group-hover:shadow-blue-500/10 transition-all duration-500">
                   <div className="bg-gray-900 rounded-xl p-6 space-y-3">
                     <div className="flex items-center gap-2">
                       <Zap className="w-4 h-4 text-blue-400 animate-pulse" />
@@ -202,7 +218,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="order-1 md:order-2 space-y-4">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold animate-pulse-glow group-hover:scale-110 transition-transform duration-300">
                     2
                   </div>
                   <h3 className="text-3xl font-bold">AI Creates Your Strategy</h3>
@@ -227,9 +243,9 @@ export default function Home() {
               </div>
 
               {/* Step 3 */}
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="grid md:grid-cols-2 gap-12 items-center group hover:scale-[1.02] transition-transform duration-500">
                 <div className="space-y-4">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold animate-pulse-glow group-hover:scale-110 transition-transform duration-300">
                     3
                   </div>
                   <h3 className="text-3xl font-bold">Start Growing Your Business</h3>

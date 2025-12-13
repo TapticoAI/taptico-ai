@@ -166,3 +166,14 @@
 - [x] Add particle/dot background animations
 - [x] Implement staggered fade-in animations
 - [x] Ensure animations respect prefers-reduced-motion for accessibility
+
+## Landing Page Dynamic Animations
+- [x] Add animated gradient background to hero section
+- [x] Implement particle/dot floating effects
+- [x] Add cursor-following glow on hero CTA buttons
+- [x] Create floating animations for feature cards
+- [x] Implement cursor-following glow effects on feature cards
+- [x] Add hover scale and glow effects on all interactive elements
+- [x] Create shimmer effects on key sections
+- [x] Add staggered fade-in animations for content
+- [x] Ensure all animations respect prefers-reduced-motion

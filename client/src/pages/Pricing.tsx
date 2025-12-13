@@ -176,10 +176,10 @@ export default function Pricing() {
                     </div>
                   )}
                   <CardHeader>
-                    <CardTitle className="text-2xl">{tier.name}</CardTitle>
+                    <CardTitle className="text-2xl text-blue-500">{tier.name}</CardTitle>
                     <CardDescription className="text-sm">{tier.description}</CardDescription>
                     <div className="mt-4">
-                      <span className="text-4xl font-bold">
+                      <span className="text-4xl font-bold text-blue-500">
                         ${billingCycle === "monthly" ? tier.monthlyPrice : Math.round(tier.annualPrice / 12)}
                       </span>
                       <span className="text-gray-400">/month</span>

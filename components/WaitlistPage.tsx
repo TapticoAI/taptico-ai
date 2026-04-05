@@ -126,8 +126,7 @@ export default function WaitlistPage() {
             </div>
 
             <div className="wm">
-              <div className="logo">Taptico<span className="logo-dot">.</span></div>
-              <div className="logo-sub">AI Operations Platform</div>
+              <img src="/taptico-logo-white.png" alt="TapticoAI" style={{height:'54px',maxWidth:'320px',display:'block',animation:'logoIn 1s ease-out 0.2s both'}} />
             </div>
 
             <div className="div" />

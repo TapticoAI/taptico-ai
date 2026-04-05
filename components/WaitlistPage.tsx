@@ -133,7 +133,7 @@ export default function WaitlistPage() {
 
             <div className="headline">The <span>AI Workforce</span><br />Is Here</div>
             <div className="subline">
-              One command. Sixty agents. Zero waiting.<br />
+              One command. Your AI workforce deploys. Zero waiting.<br />
               Deploy your AI workforce in minutes.
             </div>
 

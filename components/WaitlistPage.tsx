@@ -54,7 +54,7 @@ function SignupForm({ id }: { id: string }) {
         </div>
         {promoSuccess && (
           <div className="text-sm text-brand-lightblue mt-3 px-4 py-2.5 bg-[rgba(21,93,252,0.12)] border border-[rgba(80,162,255,0.25)] rounded-xl">
-            Your first 14 days are on us.
+            Your promo code has been applied.
           </div>
         )}
       </div>
@@ -88,7 +88,7 @@ function SignupForm({ id }: { id: string }) {
             />
           </div>
           <p className="text-center text-xs text-brand-dim mb-5 -mt-1">
-            Use code <span className="text-brand-lightblue font-semibold">NicksFirst50</span> for your first 14 days free
+            Use code <span className="text-brand-lightblue font-semibold">NicksFirst50</span> at signup
           </p>
         </>
       )}
@@ -108,9 +108,10 @@ function SignupForm({ id }: { id: string }) {
       </button>
 
       <p className="text-center text-[11px] text-brand-dim mt-3 leading-relaxed">
-        {id === 'hero'
-          ? 'No credit card required. You will be contacted when your AI workforce is ready.'
-          : 'No credit card required. Limited to 50 founding members.'}
+        No credit card required. 30-day money-back guarantee.
+      </p>
+      <p className="text-center text-[11px] text-brand-lightblue mt-2 leading-relaxed">
+        Founding Members earn a free month for every referral that signs up with their code.
       </p>
     </form>
   );
@@ -187,7 +188,7 @@ export default function WaitlistPage() {
                 <span className="text-lg text-brand-gray ml-1">/month</span>
               </div>
               <p className="text-sm text-brand-gray mb-2">
-                Locked for 12 months. First 14 days free. Cancel anytime.
+                Locked for 12 months. 30-day money-back guarantee. Cancel anytime.
               </p>
               <p className="text-sm font-semibold text-brand-lightblue mb-6">
                 47 of 50 spots remaining
@@ -388,7 +389,7 @@ export default function WaitlistPage() {
       {/* ─── Footer ─── */}
       <footer className="py-8 px-6 border-t border-brand-border">
         <p className="text-center text-xs text-brand-dim">
-          2026 Taptico Holdings, LLC | taptico.co | nick@taptico.co
+          2026 Taptico Holdings, LLC | taptico.ai | info@taptico.com
         </p>
       </footer>
     </div>

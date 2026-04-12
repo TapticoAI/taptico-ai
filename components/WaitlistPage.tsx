@@ -1,14 +1,14 @@
 'use client';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
-export default function WaitlistPage() {
+function SignupForm({ id }: { id: string }) {
   const [email, setEmail] = useState('');
   const [promoCode, setPromoCode] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [promoSuccess, setPromoSuccess] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     setErrorMsg('');
@@ -32,198 +32,365 @@ export default function WaitlistPage() {
     }
   };
 
-  const css = `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
-    @keyframes orb1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-40px) scale(1.1)}66%{transform:translate(-30px,30px) scale(0.9)}}
-    @keyframes orb2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-80px,50px) scale(0.95)}66%{transform:translate(40px,-60px) scale(1.05)}}
-    @keyframes orb3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(50px,70px) scale(1.08)}}
-    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes scan{0%{top:-2px}100%{top:100%}}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-    @keyframes logoIn{from{opacity:0;letter-spacing:0.5em}to{opacity:1;letter-spacing:-0.5px}}
-    @keyframes successPop{0%{opacity:0;transform:scale(0.88) translateY(16px)}60%{transform:scale(1.03) translateY(-2px)}100%{opacity:1;transform:scale(1) translateY(0)}}
-    @keyframes checkDraw{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
-    *{box-sizing:border-box;margin:0;padding:0}
-    .lc{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:'Inter',-apple-system,sans-serif;position:relative;overflow:hidden;background:#030314}
-    .bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(13,13,74,0.95) 0%,transparent 55%),radial-gradient(ellipse at 70% 80%,rgba(10,10,58,0.9) 0%,transparent 55%),#030314;z-index:0}
-    .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:1}
-    .o1{width:500px;height:500px;background:radial-gradient(circle,rgba(44,62,140,0.28) 0%,transparent 70%);top:-100px;left:-100px;animation:orb1 18s ease-in-out infinite}
-    .o2{width:600px;height:600px;background:radial-gradient(circle,rgba(26,26,110,0.22) 0%,transparent 70%);bottom:-150px;right:-150px;animation:orb2 22s ease-in-out infinite}
-    .o3{width:320px;height:320px;background:radial-gradient(circle,rgba(123,140,222,0.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:orb3 14s ease-in-out infinite}
-    .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(123,140,222,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(123,140,222,0.04) 1px,transparent 1px);background-size:60px 60px;z-index:2;pointer-events:none}
-    .scanline{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(123,140,222,0.07),transparent);z-index:4;animation:scan 8s linear infinite;pointer-events:none}
-    .wrap{position:relative;z-index:10;width:100%;max-width:480px;animation:fadeUp 0.8s ease-out forwards}
-    .card{background:rgba(255,255,255,0.03);border:1px solid rgba(123,140,222,0.14);border-radius:24px;padding:52px 44px;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);position:relative;overflow:hidden}
-    .card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(123,140,222,0.55),transparent);pointer-events:none}
-    .c{position:absolute;width:18px;height:18px;opacity:0.45}
-    .c-tl{top:18px;left:18px;border-top:1.5px solid rgba(123,140,222,0.8);border-left:1.5px solid rgba(123,140,222,0.8);border-radius:2px 0 0 0}
-    .c-tr{top:18px;right:18px;border-top:1.5px solid rgba(123,140,222,0.8);border-right:1.5px solid rgba(123,140,222,0.8);border-radius:0 2px 0 0}
-    .c-bl{bottom:18px;left:18px;border-bottom:1.5px solid rgba(123,140,222,0.8);border-left:1.5px solid rgba(123,140,222,0.8);border-radius:0 0 0 2px}
-    .c-br{bottom:18px;right:18px;border-bottom:1.5px solid rgba(123,140,222,0.8);border-right:1.5px solid rgba(123,140,222,0.8);border-radius:0 0 2px 0}
-    .badge{display:inline-flex;align-items:center;gap:7px;background:rgba(44,62,140,0.22);border:1px solid rgba(123,140,222,0.28);border-radius:20px;padding:6px 14px;margin-bottom:28px}
-    .badge-dot{width:6px;height:6px;border-radius:50%;background:#7b8cde;animation:blink 2s ease-in-out infinite;box-shadow:0 0 8px rgba(123,140,222,0.7)}
-    .badge-txt{font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:rgba(168,180,232,0.8)}
-    .wm{text-align:center;margin-bottom:24px}
-    .logo{font-size:38px;font-weight:900;color:#fff;letter-spacing:-0.5px;line-height:1;animation:logoIn 1s ease-out 0.2s both}
-    .logo-dot{color:#7b8cde}
-    .logo-sub{font-size:10px;font-weight:600;letter-spacing:0.38em;text-transform:uppercase;color:rgba(123,140,222,0.55);margin-top:7px}
-    .div{width:36px;height:1px;background:linear-gradient(90deg,transparent,rgba(123,140,222,0.45),transparent);margin:22px auto}
-    .headline{font-size:28px;font-weight:900;color:#fff;letter-spacing:-0.5px;line-height:1.15;margin-bottom:12px;text-align:center}
-    .headline span{background:linear-gradient(135deg,#7b8cde,#a8b4e8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .subline{font-size:14px;font-weight:400;color:rgba(168,180,232,0.6);text-align:center;line-height:1.6;margin-bottom:10px}
-    .spots{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:32px}
-    .spots-dot{width:7px;height:7px;border-radius:50%;background:#f39c12;animation:blink 1.5s ease-in-out infinite;box-shadow:0 0 8px rgba(243,156,18,0.65);flex-shrink:0}
-    .spots-txt{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,156,18,0.85)}
-    .lbl{display:block;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(168,180,232,0.55);margin-bottom:10px}
-    .lbl-opt{font-size:9px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(168,180,232,0.35);margin-left:6px}
-    .iw{position:relative;margin-bottom:14px}
-    .inp{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(123,140,222,0.22);border-radius:12px;padding:16px 18px;color:#fff;font-size:15px;font-family:'Inter',sans-serif;outline:none;transition:all 0.25s ease}
-    .inp::placeholder{color:rgba(255,255,255,0.18);font-size:13px}
-    .inp:focus{border-color:rgba(44,62,140,0.95);background:rgba(255,255,255,0.06);box-shadow:0 0 0 1px rgba(44,62,140,0.5),0 0 22px rgba(44,62,140,0.32),0 0 44px rgba(44,62,140,0.14),inset 0 1px 0 rgba(255,255,255,0.04)}
-    .promo-hint{font-size:11px;color:rgba(123,140,222,0.5);text-align:center;margin-bottom:22px;margin-top:-6px}
-    .promo-hint strong{color:rgba(123,140,222,0.8);font-weight:600}
-    .emsg{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:rgba(231,76,60,0.9);margin-bottom:14px;padding:10px 14px;background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.18);border-radius:8px;animation:fadeUp 0.3s ease-out}
-    .btn{width:100%;background:linear-gradient(135deg,#1a1a6e 0%,#2c3e8c 50%,#3d52a0 100%);border:1px solid rgba(123,140,222,0.38);border-radius:12px;padding:17px;color:#fff;font-size:12px;font-weight:700;font-family:'Inter',sans-serif;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;transition:all 0.25s ease;position:relative;overflow:hidden}
-    .btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(123,140,222,0.18),transparent);opacity:0;transition:opacity 0.25s ease}
-    .btn:hover:not(:disabled){transform:translateY(-2px) scale(1.01);border-color:rgba(123,140,222,0.65);box-shadow:0 8px 28px rgba(44,62,140,0.52),0 0 42px rgba(44,62,140,0.24),inset 0 1px 0 rgba(255,255,255,0.08)}
-    .btn:hover:not(:disabled)::before{opacity:1}
-    .btn:active:not(:disabled){transform:translateY(0) scale(0.99)}
-    .btn:disabled{opacity:0.38;cursor:not-allowed}
-    .success{text-align:center;animation:successPop 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards}
-    .check-wrap{width:72px;height:72px;margin:0 auto 24px;background:rgba(44,62,140,0.2);border:1px solid rgba(123,140,222,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center}
-    .check-svg{width:36px;height:36px}
-    .check-path{stroke:#7b8cde;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-dasharray:60;stroke-dashoffset:60;animation:checkDraw 0.5s ease-out 0.2s forwards}
-    .s-title{font-size:20px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-0.3px}
-    .s-msg{font-size:14px;color:rgba(168,180,232,0.65);line-height:1.6}
-    .s-promo{font-size:13px;color:rgba(123,140,222,0.9);margin-top:12px;padding:10px 16px;background:rgba(44,62,140,0.18);border:1px solid rgba(123,140,222,0.25);border-radius:10px}
-    .stats{display:flex;justify-content:center;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,0.05)}
-    .stat{text-align:center;flex:1;position:relative}
-    .stat+.stat::before{content:'';position:absolute;left:0;top:20%;height:60%;width:1px;background:rgba(255,255,255,0.06)}
-    .sn{display:block;font-size:18px;font-weight:800;color:rgba(255,255,255,0.88);line-height:1}
-    .sl{display:block;font-size:9px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-top:5px}
-    .foot{text-align:center;margin-top:22px;font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.13)}
-    @media(max-width:520px){.card{padding:38px 26px}.logo{font-size:30px}.headline{font-size:22px}}
-  `;
+  if (status === 'success') {
+    return (
+      <div className="text-center animate-success-pop">
+        <div className="w-[72px] h-[72px] mx-auto mb-6 bg-[rgba(21,93,252,0.15)] border border-[rgba(80,162,255,0.3)] rounded-full flex items-center justify-center">
+          <svg className="w-9 h-9" viewBox="0 0 36 36">
+            <path
+              className="animate-check-draw"
+              d="M8 18 L15 25 L28 11"
+              stroke="#50a2ff"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+          </svg>
+        </div>
+        <div className="text-xl font-bold text-white mb-2">You&apos;re on the list.</div>
+        <div className="text-sm text-brand-gray leading-relaxed">
+          We&apos;ll be in touch when your AI workforce is ready.
+        </div>
+        {promoSuccess && (
+          <div className="text-sm text-brand-lightblue mt-3 px-4 py-2.5 bg-[rgba(21,93,252,0.12)] border border-[rgba(80,162,255,0.25)] rounded-xl">
+            Your first 14 days are on us.
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
-    <>
-      <style>{css}</style>
-      <div className="lc">
-        <div className="bg" />
-        <div className="orb o1" /><div className="orb o2" /><div className="orb o3" />
-        <div className="grid" />
-        <div className="scanline" />
-        <div className="wrap">
-          <div className="card">
-            <div className="c c-tl" /><div className="c c-tr" />
-            <div className="c c-bl" /><div className="c c-br" />
+    <form onSubmit={handleSubmit}>
+      <div className="mb-3">
+        <input
+          id={`${id}-email`}
+          type="email"
+          value={email}
+          onChange={(e) => { setEmail(e.target.value); if (status === 'error') setStatus('idle'); }}
+          placeholder="Your email address"
+          required
+          className="w-full bg-[rgba(255,255,255,0.04)] border border-brand-border rounded-xl px-4 py-4 text-white text-[15px] font-poppins placeholder:text-brand-dim outline-none transition-all duration-200 focus:border-brand-blue focus:bg-[rgba(255,255,255,0.06)] focus:shadow-[0_0_0_1px_rgba(21,93,252,0.4),0_0_20px_rgba(21,93,252,0.15)]"
+        />
+      </div>
 
-            <div style={{ textAlign: 'center' }}>
-              <div className="badge">
-                <div className="badge-dot" />
-                <div className="badge-txt">Beta Pilot Program</div>
-              </div>
-            </div>
-
-            <div className="wm">
-              <img src="/taptico-logo-white.png" alt="TapticoAI" style={{height:'54px',maxWidth:'360px',display:'block',margin:'0 auto',animation:'logoIn 1s ease-out 0.2s both'}} />
-            </div>
-
-            <div className="div" />
-
-            <div className="headline">The <span>AI Workforce</span><br />Is Here</div>
-            <div className="subline">
-              One command. Your AI workforce deploys. Zero waiting.<br />
-              Deploy your AI workforce in minutes.
-            </div>
-
-            <div className="spots">
-              <div className="spots-dot" />
-              <div className="spots-txt">47 spots remaining</div>
-            </div>
-
-            {status === 'success' ? (
-              <div className="success">
-                <div className="check-wrap">
-                  <svg className="check-svg" viewBox="0 0 36 36">
-                    <path className="check-path" d="M8 18 L15 25 L28 11" />
-                  </svg>
-                </div>
-                <div className="s-title">You&apos;re on the list.</div>
-                <div className="s-msg">We&apos;ll be in touch when your seat is ready.</div>
-                {promoSuccess && (
-                  <div className="s-promo">🎉 Your first 14 days are on us.</div>
-                )}
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <label className="lbl" htmlFor="email-field">Email Address</label>
-                <div className="iw">
-                  <input
-                    id="email-field"
-                    type="email"
-                    value={email}
-                    onChange={(e) => { setEmail(e.target.value); if (status === 'error') setStatus('idle'); }}
-                    placeholder="you@company.com"
-                    required
-                    className="inp"
-                  />
-                </div>
-
-                <label className="lbl" htmlFor="promo-field">
-                  Promo Code <span className="lbl-opt">optional</span>
-                </label>
-                <div className="iw">
-                  <input
-                    id="promo-field"
-                    type="text"
-                    value={promoCode}
-                    onChange={(e) => setPromoCode(e.target.value)}
-                    placeholder="Enter code"
-                    className="inp"
-                  />
-                </div>
-
-                <div className="promo-hint">
-                  Use code <strong>NicksFirst50</strong> for your first 14 days free — limited to 50 spots
-                </div>
-
-                {status === 'error' && (
-                  <div className="emsg">
-                    <span>⊘</span>
-                    <span>{errorMsg}</span>
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={status === 'loading' || !email}
-                  className="btn"
-                >
-                  {status === 'loading' ? '↻  Securing Your Spot...' : '⚡  Reserve Your Spot'}
-                </button>
-              </form>
-            )}
-
-            <div className="stats">
-              {([
-                ['73', 'Agents Built'],
-                ['5', 'Charter Clients'],
-                ['$375K', 'ARR'],
-              ] as [string, string][]).map(([n, l]) => (
-                <div key={l} className="stat">
-                  <span className="sn">{n}</span>
-                  <span className="sl">{l}</span>
-                </div>
-              ))}
-            </div>
+      {id === 'hero' && (
+        <>
+          <div className="mb-3">
+            <input
+              id={`${id}-promo`}
+              type="text"
+              value={promoCode}
+              onChange={(e) => setPromoCode(e.target.value)}
+              placeholder="Promo code (optional)"
+              className="w-full bg-[rgba(255,255,255,0.04)] border border-brand-border rounded-xl px-4 py-4 text-white text-[15px] font-poppins placeholder:text-brand-dim outline-none transition-all duration-200 focus:border-brand-blue focus:bg-[rgba(255,255,255,0.06)] focus:shadow-[0_0_0_1px_rgba(21,93,252,0.4),0_0_20px_rgba(21,93,252,0.15)]"
+            />
           </div>
+          <p className="text-center text-xs text-brand-dim mb-5 -mt-1">
+            Use code <span className="text-brand-lightblue font-semibold">NicksFirst50</span> for your first 14 days free
+          </p>
+        </>
+      )}
 
-          <div className="foot">
-            © 2026 Taptico &nbsp;·&nbsp; Built by TapticoOS
+      {status === 'error' && (
+        <div className="flex items-center gap-2 text-xs font-medium text-red-400 mb-3 px-3 py-2.5 bg-[rgba(239,68,68,0.08)] border border-[rgba(239,68,68,0.2)] rounded-lg animate-fade-up">
+          {errorMsg}
+        </div>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === 'loading' || !email}
+        className="w-full bg-brand-blue hover:bg-[#1a6aff] border border-[rgba(80,162,255,0.3)] rounded-xl py-4 text-white text-sm font-bold font-poppins tracking-wide uppercase cursor-pointer transition-all duration-200 hover:translate-y-[-2px] hover:shadow-[0_8px_30px_rgba(21,93,252,0.4),0_0_40px_rgba(21,93,252,0.15)] active:translate-y-0 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none"
+      >
+        {status === 'loading' ? 'Securing Your Spot...' : 'Reserve Your Spot'}
+      </button>
+
+      <p className="text-center text-[11px] text-brand-dim mt-3 leading-relaxed">
+        {id === 'hero'
+          ? 'No credit card required. You will be contacted when your AI workforce is ready.'
+          : 'No credit card required. Limited to 50 founding members.'}
+      </p>
+    </form>
+  );
+}
+
+function GradientDivider() {
+  return (
+    <div className="w-full h-px opacity-40 bg-gradient-to-r from-transparent via-brand-blue to-transparent" />
+  );
+}
+
+export default function WaitlistPage() {
+  return (
+    <div className="min-h-screen bg-brand-bg font-poppins text-brand-text overflow-x-hidden">
+      {/* ─── Fixed Nav ─── */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[rgba(3,3,3,0.8)] backdrop-blur-xl border-b border-brand-border">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <img
+            src="/taptico-logo-white.png"
+            alt="TAPTICO.AI"
+            className="h-8"
+          />
+          <div className="border border-[rgba(80,162,255,0.3)] rounded-full px-4 py-1.5 text-xs font-semibold tracking-widest uppercase text-brand-lightblue">
+            Founding Members
           </div>
         </div>
+      </nav>
+
+      {/* ─── Hero Section ─── */}
+      <section className="relative pt-32 pb-24 px-6 overflow-hidden">
+        {/* Radial blue glow behind hero */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(21,93,252,0.08)_0%,transparent_70%)] pointer-events-none" />
+
+        <div className="relative max-w-3xl mx-auto text-center">
+          {/* Eyebrow badge */}
+          <div className="inline-flex items-center gap-2.5 bg-[rgba(21,93,252,0.1)] border border-[rgba(80,162,255,0.2)] rounded-full px-5 py-2 mb-8">
+            <span className="w-2 h-2 rounded-full bg-brand-blue shadow-[0_0_8px_rgba(21,93,252,0.7)] animate-pulse-dot" />
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-brand-lightblue">
+              Founding Members Program - Limited to 50
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] mb-4">
+            Never miss another recital.
+          </h1>
+
+          {/* Sub-headline */}
+          <p className="text-2xl md:text-3xl font-semibold mb-6">
+            Your business <span className="text-brand-lightblue">runs itself.</span> You just talk.
+          </p>
+
+          {/* Subhead */}
+          <p className="text-base text-brand-gray leading-relaxed max-w-2xl mx-auto mb-8">
+            TapticoOS is your AI workforce. Send a voice memo. A playbook runs. Sales, marketing, operations - handled. You never touch a dashboard. You just live your life.
+          </p>
+
+          {/* Proof line */}
+          <p className="text-sm italic text-brand-dim leading-relaxed max-w-2xl mx-auto mb-12">
+            Built by an Inc 5000 winner with 25 years in the trenches. Launched two radio stations. Grew a restaurant brand named fastest-growing in Atlanta. Worked alongside Coca-Cola, Harley-Davidson, and Live Nation. No engineering team. Just vision and AI.
+          </p>
+
+          {/* CTA Box */}
+          <div className="relative max-w-md mx-auto">
+            {/* Top edge glow */}
+            <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-blue to-transparent opacity-60" />
+            <div className="bg-[rgba(11,11,11,0.7)] backdrop-blur-[20px] border border-brand-border rounded-2xl p-8">
+              <p className="text-sm font-semibold tracking-widest uppercase text-brand-gray mb-4">
+                Founding Member Pricing
+              </p>
+              <div className="mb-2">
+                <span className="text-lg text-brand-dim line-through mr-3">$2,500/mo</span>
+                <span className="text-4xl font-bold text-white">$1,500</span>
+                <span className="text-lg text-brand-gray ml-1">/month</span>
+              </div>
+              <p className="text-sm text-brand-gray mb-2">
+                Locked for 12 months. First 14 days free. Cancel anytime.
+              </p>
+              <p className="text-sm font-semibold text-brand-lightblue mb-6">
+                47 of 50 spots remaining
+              </p>
+              <SignupForm id="hero" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Divider ─── */}
+      <div className="max-w-5xl mx-auto px-6">
+        <GradientDivider />
       </div>
-    </>
+
+      {/* ─── How It Works ─── */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-brand-lightblue text-center mb-4">
+            How It Works
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            Three steps. Then you go live your life.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Step 1 */}
+            <div className="bg-brand-card border border-brand-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-borderlight">
+              <div className="text-xs font-bold tracking-[0.2em] uppercase text-brand-dim mb-3">Step One</div>
+              <h3 className="text-lg font-bold text-white mb-3">Free discovery call</h3>
+              <p className="text-sm text-brand-gray leading-relaxed">
+                Our AI agent Disco Dave interviews you (or fill out a quick form). You get a free custom plan showing exactly what AI can do for your business. No commitment, no pitch.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-brand-card border border-brand-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-borderlight">
+              <div className="text-xs font-bold tracking-[0.2em] uppercase text-brand-dim mb-3">Step Two</div>
+              <h3 className="text-lg font-bold text-white mb-3">We build it in 24 hours</h3>
+              <p className="text-sm text-brand-gray leading-relaxed">
+                Say the word and we handle everything. Onboarding, configuration, training the system on your business, your industry, your competitors. You bring your own API keys. We do the rest.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-brand-card border border-brand-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-borderlight">
+              <div className="text-xs font-bold tracking-[0.2em] uppercase text-brand-dim mb-3">Step Three</div>
+              <h3 className="text-lg font-bold text-white mb-3">Send a voice memo. Done.</h3>
+              <p className="text-sm text-brand-gray leading-relaxed">
+                That&apos;s it. &quot;Run the New Listing Playbook for 112 Main St.&quot; Your playbook fires: social posts go out, listings go live, clients get notified. You go to the recital.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Divider ─── */}
+      <div className="max-w-5xl mx-auto px-6">
+        <GradientDivider />
+      </div>
+
+      {/* ─── Playbooks Section ─── */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-brand-lightblue text-center mb-4">
+            Playbooks, Not Dashboards
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+            You say the word. The playbook runs.
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Sales */}
+            <div className="bg-brand-card border border-brand-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-borderlight">
+              <div className="w-10 h-10 rounded-xl bg-[rgba(21,93,252,0.12)] border border-[rgba(80,162,255,0.2)] flex items-center justify-center mb-5">
+                <svg className="w-5 h-5 text-brand-lightblue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">Sales playbooks</h3>
+              <p className="text-sm text-brand-gray leading-relaxed">
+                Prospecting, cold outreach, follow-ups, lead scoring. One command triggers the whole sequence. Personalized to every lead.
+              </p>
+            </div>
+
+            {/* Content */}
+            <div className="bg-brand-card border border-brand-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-borderlight">
+              <div className="w-10 h-10 rounded-xl bg-[rgba(21,93,252,0.12)] border border-[rgba(80,162,255,0.2)] flex items-center justify-center mb-5">
+                <svg className="w-5 h-5 text-brand-lightblue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">Content playbooks</h3>
+              <p className="text-sm text-brand-gray leading-relaxed">
+                Social posts, blogs, newsletters, ad copy. Written in your voice. Scheduled and published. You never open Canva again.
+              </p>
+            </div>
+
+            {/* Operations */}
+            <div className="bg-brand-card border border-brand-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-borderlight">
+              <div className="w-10 h-10 rounded-xl bg-[rgba(21,93,252,0.12)] border border-[rgba(80,162,255,0.2)] flex items-center justify-center mb-5">
+                <svg className="w-5 h-5 text-brand-lightblue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">Operations playbooks</h3>
+              <p className="text-sm text-brand-gray leading-relaxed">
+                Client onboarding, check-ins, renewals, scheduling. Your clients feel taken care of because they are.
+              </p>
+            </div>
+
+            {/* Intel */}
+            <div className="bg-brand-card border border-brand-border rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:border-brand-borderlight">
+              <div className="w-10 h-10 rounded-xl bg-[rgba(21,93,252,0.12)] border border-[rgba(80,162,255,0.2)] flex items-center justify-center mb-5">
+                <svg className="w-5 h-5 text-brand-lightblue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3">Intel playbooks</h3>
+              <p className="text-sm text-brand-gray leading-relaxed">
+                Morning briefs on your phone. Weekly scorecards. Competitor alerts. Ask a question, get an answer. No login required.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Divider ─── */}
+      <div className="max-w-5xl mx-auto px-6">
+        <GradientDivider />
+      </div>
+
+      {/* ─── Quote Section ─── */}
+      <section className="py-24 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <blockquote className="text-3xl md:text-4xl font-bold italic leading-tight mb-6">
+            &quot;We learned AI so you don&apos;t have to.&quot;
+          </blockquote>
+          <cite className="text-sm font-semibold text-brand-gray not-italic tracking-wide">
+            Nick Tapp, Founder
+          </cite>
+        </div>
+      </section>
+
+      {/* ─── Divider ─── */}
+      <div className="max-w-5xl mx-auto px-6">
+        <GradientDivider />
+      </div>
+
+      {/* ─── Proof Bar ─── */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div className="text-4xl font-bold text-white">25+</div>
+            <div className="text-xs font-semibold tracking-[0.15em] uppercase text-brand-dim mt-2">Years Experience</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-white">73</div>
+            <div className="text-xs font-semibold tracking-[0.15em] uppercase text-brand-dim mt-2">AI Agents</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-white">91%</div>
+            <div className="text-xs font-semibold tracking-[0.15em] uppercase text-brand-dim mt-2">Gross Margins</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-white">4</div>
+            <div className="text-xs font-semibold tracking-[0.15em] uppercase text-brand-dim mt-2">Active Clients</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Divider ─── */}
+      <div className="max-w-5xl mx-auto px-6">
+        <GradientDivider />
+      </div>
+
+      {/* ─── Bottom CTA ─── */}
+      <section className="py-24 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            One employee costs $60K a year. This costs less. And <span className="text-brand-lightblue">never sleeps.</span>
+          </h2>
+          <p className="text-base text-brand-gray leading-relaxed max-w-2xl mx-auto mb-12">
+            50 founding members get locked-in pricing at $1,500/mo before it goes to $2,500. Built for your industry. Gets smarter every day. Ready when you are.
+          </p>
+
+          {/* CTA Box */}
+          <div className="relative max-w-md mx-auto">
+            <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-blue to-transparent opacity-60" />
+            <div className="bg-[rgba(11,11,11,0.7)] backdrop-blur-[20px] border border-brand-border rounded-2xl p-8">
+              <SignupForm id="bottom" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Footer ─── */}
+      <footer className="py-8 px-6 border-t border-brand-border">
+        <p className="text-center text-xs text-brand-dim">
+          2026 Taptico Holdings, LLC | taptico.co | nick@taptico.co
+        </p>
+      </footer>
+    </div>
   );
 }

@@ -156,7 +156,7 @@ export default function WaitlistPage() {
 
           {/* Headline */}
           <h1 className="text-5xl md:text-6xl font-bold leading-[1.1] mb-4">
-            Never miss another recital.
+            Do a week&apos;s worth of work in 5 words.
           </h1>
 
           {/* Sub-headline */}

@@ -161,7 +161,7 @@ export default function WaitlistPage() {
 
           {/* Sub-headline */}
           <p className="text-2xl md:text-3xl font-semibold mb-6">
-            Your business <span className="text-brand-lightblue">runs itself.</span> You just talk.
+            Your business <span className="text-brand-lightblue">runs itself.</span> You just tell it what to do.
           </p>
 
           {/* Subhead */}

@@ -1,8 +1,8 @@
 import Sidebar from '@/components/portal/Sidebar';
-import { requirePortalUser } from '@/lib/auth';
+import { requireOnboardedUser } from '@/lib/auth';
 
 export default async function PortalLayout({ children }: { children: React.ReactNode }) {
-  const user = await requirePortalUser();
+  const user = await requireOnboardedUser();
 
   return (
     <div className="min-h-screen flex bg-brand-black text-brand-white">

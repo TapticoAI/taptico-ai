@@ -1,4 +1,4 @@
-import { requirePortalUser } from '@/lib/auth';
+import { requireOnboardedUser } from '@/lib/auth';
 import AccountForm from './AccountForm';
 
 export const metadata = {
@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 export default async function AccountPage() {
-  const user = await requirePortalUser();
+  const user = await requireOnboardedUser();
 
   return (
     <div className="space-y-8 max-w-2xl">

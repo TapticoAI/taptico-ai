@@ -10,18 +10,21 @@ const config: Config = {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
       },
       colors: {
         brand: {
-          bg: '#030303',
-          text: '#f8f8f8',
-          gray: '#9e9e9e',
-          dim: '#666',
-          blue: '#155dfc',
-          lightblue: '#50a2ff',
-          card: '#0b0b0b',
-          border: '#1a1a1a',
-          borderlight: '#282828',
+          black: '#0A0A0A',
+          white: '#FFFFFF',
+          navy: '#0D2B6B',
+          // Utility tones derived from the core palette
+          bg: '#0A0A0A',
+          text: '#FFFFFF',
+          surface: '#111111',
+          border: '#1F2A44',
+          muted: '#8A93A6',
+          accent: '#0D2B6B',
+          accentHover: '#12378a',
         },
       },
     },

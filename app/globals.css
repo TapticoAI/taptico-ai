@@ -11,9 +11,10 @@
 html,
 body {
   height: 100%;
-  background: #030303;
+  background: #0A0A0A;
   font-family: 'Poppins', sans-serif;
-  color: #f8f8f8;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Subtle grain texture overlay */
@@ -75,4 +76,17 @@ body::before {
   stroke-dasharray: 60;
   stroke-dashoffset: 60;
   animation: checkDraw 0.5s ease-out 0.2s forwards;
+}
+
+/* Portal form inputs */
+.portal-input {
+  @apply w-full rounded-md bg-brand-surface border border-brand-border px-3 py-2 text-brand-white placeholder:text-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-navy focus:border-brand-navy transition;
+}
+
+.portal-button {
+  @apply inline-flex items-center justify-center rounded-md bg-brand-navy hover:bg-brand-accentHover text-white font-medium px-4 py-2 transition disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.portal-button-secondary {
+  @apply inline-flex items-center justify-center rounded-md bg-transparent border border-brand-border hover:border-brand-navy text-brand-white font-medium px-4 py-2 transition;
 }

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TapticoAI — The AI Workforce Platform",
-  description: "Your AI workforce. Send a voice memo. A playbook runs. Sales, marketing, operations handled.",
+  title: "TapticoAI — Client Portal",
+  description: "Your Taptico workspace. Sign in to access your AI workforce.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: "/favicon.png",
@@ -25,7 +25,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body className="font-poppins">{children}</body>
     </html>
   );
 }

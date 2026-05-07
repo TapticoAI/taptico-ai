@@ -1,0 +1,11 @@
+CLAUDE.local.md
+.env
+.env.local
+.DS_Store
+*.log
+
+# Operator-specific or sensitive intake — never commit raw client material
+ops/handoffs/inbox/
+memory/raw/
+clients/*/memory/raw/
+clients/*/telegram/raw/

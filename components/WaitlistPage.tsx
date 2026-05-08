@@ -274,4 +274,4 @@ export default function WaitlistPage() {
                 </footer>
           </div>
         );
-}</div>
+}

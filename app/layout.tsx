@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
+import { Inter, Roboto_Slab } from "next/font/google";
 import "./globals.css";
+import { Providers } from "@/components/Providers";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-roboto-slab",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "TapticoAI — The AI Workforce Platform",
-  description: "Your AI workforce. Send a voice memo. A playbook runs. Sales, marketing, operations handled.",
+  title: "The GRID — Southern Lighting Source",
+  description:
+    "Private project portal for Southern Lighting Source. On Time. On Budget. Beautiful.",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: "/favicon.png",
@@ -12,20 +28,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>{children}</body>
+    <html lang="en" className={`${inter.variable} ${robotoSlab.variable}`}>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

@@ -2,77 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  height: 100%;
-  background: #030303;
-  font-family: 'Poppins', sans-serif;
-  color: #f8f8f8;
-}
-
-/* Subtle grain texture overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-}
-
-/* Pulsing dot animation */
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.animate-pulse-dot {
-  animation: pulse-dot 2s ease-in-out infinite;
-}
-
-/* Smooth fade up for sections */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
+/*
+ * The GRID brand tokens (SLS).
+ * The legacy waitlist (still served under /waitlist) overrides these
+ * locally in its own layout — see app/waitlist/layout.tsx.
+ */
+@layer base {
+  :root {
+    /* SLS brand */
+    --sls-gold: 210 64% 53%; /* unused as HSL — see hex tokens in tailwind.config */
+    /* shadcn-style semantic tokens (light) */
+    --background: 0 0% 100%;
+    --foreground: 24 39% 8%; /* #1b110b */
+    --card: 0 0% 100%;
+    --card-foreground: 24 39% 8%;
+    --muted: 50 35% 95%; /* sand-tinted */
+    --muted-foreground: 220 8% 35%;
+    --accent: 38 62% 53%; /* gold */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 47 38% 83%; /* sls-sand */
+    --ring: 38 62% 53%;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  html,
+  body {
+    background: #ffffff;
+    color: #1b110b;
+    font-family: var(--font-inter), Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-roboto-slab), "Roboto Slab", serif;
+    font-weight: 600;
+    color: #1b110b;
   }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.8s ease-out forwards;
-}
+@layer components {
+  .sls-page-title {
+    @apply font-slab uppercase tracking-tight text-2xl md:text-3xl text-sls-dark-brown;
+  }
 
-/* Success animations */
-@keyframes successPop {
-  0% { opacity: 0; transform: scale(0.88) translateY(16px); }
-  60% { transform: scale(1.03) translateY(-2px); }
-  100% { opacity: 1; transform: scale(1) translateY(0); }
-}
+  .sls-card {
+    @apply bg-white border border-sls-sand rounded-md shadow-card;
+  }
 
-@keyframes checkDraw {
-  from { stroke-dashoffset: 60; }
-  to { stroke-dashoffset: 0; }
-}
+  .sls-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .sls-badge-approved { @apply bg-emerald-100 text-emerald-800; }
+  .sls-badge-pending  { @apply bg-gray-100  text-gray-700; }
+  .sls-badge-progress { @apply bg-blue-100  text-blue-800; }
+  .sls-badge-rejected { @apply bg-red-100   text-red-800; }
+  .sls-badge-review   { @apply bg-yellow-100 text-yellow-800; }
 
-.animate-success-pop {
-  animation: successPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-.animate-check-draw {
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  animation: checkDraw 0.5s ease-out 0.2s forwards;
+  .sls-btn-gold {
+    @apply inline-flex items-center justify-center rounded-md border border-sls-gold
+           bg-transparent px-4 py-2 text-sls-gold font-semibold transition
+           hover:bg-sls-gold hover:text-white focus:outline-none focus:ring-2 focus:ring-sls-gold focus:ring-offset-2;
+  }
 }
